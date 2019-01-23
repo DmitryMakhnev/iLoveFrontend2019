@@ -1,0 +1,780 @@
+{
+  "Exif Private IFD": [
+    {
+      "hex": "4746",
+      "name": "Image.Rating"
+    },
+    {
+      "hex": "4749",
+      "name": "Image.RatingPercent"
+    },
+    {
+      "hex": "828D",
+      "name": "CFARepeatPatternDim"
+    },
+    {
+      "hex": "828E",
+      "name": "CFAPattern"
+    },
+    {
+      "hex": "828F",
+      "name": "BatteryLevel"
+    },
+    {
+      "hex": "8773",
+      "name": "InterColorProfile"
+    },
+    {
+      "hex": "8829",
+      "name": "Interlace"
+    },
+    {
+      "hex": "882A",
+      "name": "TimeZoneOffset"
+    },
+    {
+      "hex": "882B",
+      "name": "SelfTimeMode"
+    },
+    {
+      "hex": "920B",
+      "name": "FlashEnergy"
+    },
+    {
+      "hex": "920C",
+      "name": "SpatialFrequencyResponse"
+    },
+    {
+      "hex": "920D",
+      "name": "Noise"
+    },
+    {
+      "hex": "920E",
+      "name": "FocalPlaneXResolution"
+    },
+    {
+      "hex": "920F",
+      "name": "FocalPlaneYResolution"
+    },
+    {
+      "hex": "9210",
+      "name": "FocalPlaneResolutionUnit"
+    },
+    {
+      "hex": "9211",
+      "name": "ImageNumber"
+    },
+    {
+      "hex": "9212",
+      "name": "SecurityClassification"
+    },
+    {
+      "hex": "9213",
+      "name": "ImageHistory"
+    },
+    {
+      "hex": "9215",
+      "name": "ExposureIndex"
+    },
+    {
+      "hex": "9216",
+      "name": "TIFF/EPStandardID"
+    },
+    {
+      "hex": "9217",
+      "name": "SensingMethod"
+    },
+    {
+      "hex": "9C9B",
+      "name": "XPTitle"
+    },
+    {
+      "hex": "9C9C",
+      "name": "XPComment"
+    },
+    {
+      "hex": "9C9D",
+      "name": "XPAuthor"
+    },
+    {
+      "hex": "9C9E",
+      "name": "XPKeywords"
+    },
+    {
+      "hex": "9C9F",
+      "name": "XPSubject"
+    },
+    {
+      "hex": "C4A5",
+      "name": "PrintImageMatching"
+    },
+    {
+      "hex": "C612",
+      "name": "DNGVersion"
+    },
+    {
+      "hex": "C613",
+      "name": "DNGBackwardVersion"
+    },
+    {
+      "hex": "C614",
+      "name": "UniqueCameraModel"
+    },
+    {
+      "hex": "C615",
+      "name": "LocalizedCameraModel"
+    },
+    {
+      "hex": "C616",
+      "name": "CFAPlaneColor"
+    },
+    {
+      "hex": "C617",
+      "name": "CFALayout"
+    },
+    {
+      "hex": "C618",
+      "name": "LinearizationTable"
+    },
+    {
+      "hex": "C619",
+      "name": "BlackLevelRepeatDim"
+    },
+    {
+      "hex": "C61A",
+      "name": "BlackLevel"
+    },
+    {
+      "hex": "C61B",
+      "name": "BlackLevelDeltaH"
+    },
+    {
+      "hex": "C61C",
+      "name": "BlackLevelDeltaV"
+    },
+    {
+      "hex": "C61D",
+      "name": "WhiteLevel"
+    },
+    {
+      "hex": "C61E",
+      "name": "DefaultScale"
+    },
+    {
+      "hex": "C61F",
+      "name": "DefaultCropOrigin"
+    },
+    {
+      "hex": "C620",
+      "name": "DefaultCropSize"
+    },
+    {
+      "hex": "C621",
+      "name": "ColorMatrix1"
+    },
+    {
+      "hex": "C622",
+      "name": "ColorMatrix2"
+    },
+    {
+      "hex": "C623",
+      "name": "CameraCalibration1"
+    },
+    {
+      "hex": "C624",
+      "name": "CameraCalibration2"
+    },
+    {
+      "hex": "C625",
+      "name": "ReductionMatrix1"
+    },
+    {
+      "hex": "C626",
+      "name": "ReductionMatrix2"
+    },
+    {
+      "hex": "C627",
+      "name": "AnalogBalance"
+    },
+    {
+      "hex": "C628",
+      "name": "AsShotNeutral"
+    },
+    {
+      "hex": "C629",
+      "name": "AsShotWhiteXY"
+    },
+    {
+      "hex": "C62A",
+      "name": "BaselineExposure"
+    },
+    {
+      "hex": "C62B",
+      "name": "BaselineNoise"
+    },
+    {
+      "hex": "C62C",
+      "name": "BaselineSharpness"
+    },
+    {
+      "hex": "C62D",
+      "name": "BayerGreenSplit"
+    },
+    {
+      "hex": "C62E",
+      "name": "LinearResponseLimit"
+    },
+    {
+      "hex": "C62F",
+      "name": "CameraSerialNumber"
+    },
+    {
+      "hex": "C630",
+      "name": "LensInfo"
+    },
+    {
+      "hex": "C631",
+      "name": "ChromaBlurRadius"
+    },
+    {
+      "hex": "C632",
+      "name": "AntiAliasStrength"
+    },
+    {
+      "hex": "C633",
+      "name": "ShadowScale"
+    },
+    {
+      "hex": "C634",
+      "name": "DNGPrivateData"
+    },
+    {
+      "hex": "C635",
+      "name": "MakerNoteSafety"
+    },
+    {
+      "hex": "C65A",
+      "name": "CalibrationIlluminant1"
+    },
+    {
+      "hex": "C65B",
+      "name": "CalibrationIlluminant2"
+    },
+    {
+      "hex": "C65C",
+      "name": "BestQualityScale"
+    },
+    {
+      "hex": "C65D",
+      "name": "RawDataUniqueID"
+    },
+    {
+      "hex": "C68B",
+      "name": "OriginalRawFileName"
+    },
+    {
+      "hex": "C68C",
+      "name": "OriginalRawFileData"
+    },
+    {
+      "hex": "C68D",
+      "name": "ActiveArea"
+    },
+    {
+      "hex": "C68E",
+      "name": "MaskedAreas"
+    },
+    {
+      "hex": "C68F",
+      "name": "AsShotICCProfile"
+    },
+    {
+      "hex": "C690",
+      "name": "AsShotPreProfileMatrix"
+    },
+    {
+      "hex": "C691",
+      "name": "CurrentICCProfile"
+    },
+    {
+      "hex": "C692",
+      "name": "CurrentPreProfileMatrix"
+    },
+    {
+      "hex": "C6BF",
+      "name": "ColorimetricReference"
+    },
+    {
+      "hex": "C6F3",
+      "name": "CameraCalibrationSignature"
+    },
+    {
+      "hex": "C6F4",
+      "name": "ProfileCalibrationSignature"
+    },
+    {
+      "hex": "C6F6",
+      "name": "AsShotProfileName"
+    },
+    {
+      "hex": "C6F7",
+      "name": "NoiseReductionApplied"
+    },
+    {
+      "hex": "C6F8",
+      "name": "ProfileName"
+    },
+    {
+      "hex": "C6F9",
+      "name": "ProfileHueSatMapDims"
+    },
+    {
+      "hex": "C6FA",
+      "name": "ProfileHueSatMapData1"
+    },
+    {
+      "hex": "C6FB",
+      "name": "ProfileHueSatMapData2"
+    },
+    {
+      "hex": "C6FC",
+      "name": "ProfileToneCurve"
+    },
+    {
+      "hex": "C6FD",
+      "name": "ProfileEmbedPolicy"
+    },
+    {
+      "hex": "C6FE",
+      "name": "ProfileCopyright"
+    },
+    {
+      "hex": "C714",
+      "name": "ForwardMatrix1"
+    },
+    {
+      "hex": "C715",
+      "name": "ForwardMatrix2"
+    },
+    {
+      "hex": "C716",
+      "name": "PreviewApplicationName"
+    },
+    {
+      "hex": "C717",
+      "name": "PreviewApplicationVersion"
+    },
+    {
+      "hex": "C718",
+      "name": "PreviewSettingsName"
+    },
+    {
+      "hex": "C719",
+      "name": "PreviewSettingsDigest"
+    },
+    {
+      "hex": "C71A",
+      "name": "PreviewColorSpace"
+    },
+    {
+      "hex": "C71B",
+      "name": "PreviewDateTime"
+    },
+    {
+      "hex": "C71C",
+      "name": "RawImageDigest"
+    },
+    {
+      "hex": "C71D",
+      "name": "OriginalRawFileDigest"
+    },
+    {
+      "hex": "C71E",
+      "name": "SubTileBlockSize"
+    },
+    {
+      "hex": "C71F",
+      "name": "RowInterleaveFactor"
+    },
+    {
+      "hex": "C725",
+      "name": "ProfileLookTableDims"
+    },
+    {
+      "hex": "C726",
+      "name": "ProfileLookTableData"
+    },
+    {
+      "hex": "C740",
+      "name": "OpcodeList1"
+    },
+    {
+      "hex": "C741",
+      "name": "OpcodeList2"
+    },
+    {
+      "hex": "C74E",
+      "name": "OpcodeList3"
+    },
+    {
+      "hex": "C761",
+      "name": "NoiseProfile"
+    }
+  ],
+  "Private": [
+    {
+      "hex": "80A4",
+      "name": "Wang Annotation"
+    },
+    {
+      "hex": "82A5",
+      "name": "MD FileTag"
+    },
+    {
+      "hex": "82A6",
+      "name": "MD ScalePixel"
+    },
+    {
+      "hex": "82A7",
+      "name": "MD ColorTable"
+    },
+    {
+      "hex": "82A8",
+      "name": "MD LabName"
+    },
+    {
+      "hex": "82A9",
+      "name": "MD SampleInfo"
+    },
+    {
+      "hex": "82AA",
+      "name": "MD PrepDate"
+    },
+    {
+      "hex": "82AB",
+      "name": "MD PrepTime"
+    },
+    {
+      "hex": "82AC",
+      "name": "MD FileUnits"
+    },
+    {
+      "hex": "830E",
+      "name": "ModelPixelScaleTag"
+    },
+    {
+      "hex": "847E",
+      "name": "INGR Packet Data Tag"
+    },
+    {
+      "hex": "847F",
+      "name": "INGR Flag Registers"
+    },
+    {
+      "hex": "8480",
+      "name": "IrasB Transformation Matrix"
+    },
+    {
+      "hex": "8482",
+      "name": "ModelTiepointTag"
+    },
+    {
+      "hex": "85D8",
+      "name": "ModelTransformationTag"
+    },
+    {
+      "hex": "8649",
+      "name": "Photoshop"
+    },
+    {
+      "hex": "87AF",
+      "name": "GeoKeyDirectoryTag"
+    },
+    {
+      "hex": "87B0",
+      "name": "GeoDoubleParamsTag"
+    },
+    {
+      "hex": "87B1",
+      "name": "GeoAsciiParamsTag"
+    },
+    {
+      "hex": "885C",
+      "name": "HylaFAX FaxRecvParams"
+    },
+    {
+      "hex": "885D",
+      "name": "HylaFAX FaxSubAddress"
+    },
+    {
+      "hex": "885E",
+      "name": "HylaFAX FaxRecvTime"
+    },
+    {
+      "hex": "935C",
+      "name": "ImageSourceData"
+    },
+    {
+      "hex": "A480",
+      "name": "GDAL_METADATA"
+    },
+    {
+      "hex": "A481",
+      "name": "GDAL_NODATA"
+    },
+    {
+      "hex": "C427",
+      "name": "Oce Scanjob Description"
+    },
+    {
+      "hex": "C428",
+      "name": "Oce Application Selector"
+    },
+    {
+      "hex": "C429",
+      "name": "Oce Identification Number"
+    },
+    {
+      "hex": "C42A",
+      "name": "Oce ImageLogic Characteristics"
+    },
+    {
+      "hex": "C660",
+      "name": "Alias Layer Metadata"
+    }
+  ],
+  "TIFF/EP spec, p. 33": [
+    {
+      "hex": "83BB",
+      "name": "IPTC/NAA"
+    }
+  ],
+  "TIFF/IT spec, 7.2.3": [
+    {
+      "hex": "84E0",
+      "name": "Site"
+    },
+    {
+      "hex": "84E2",
+      "name": "IT8Header"
+    }
+  ],
+  "TIFF/IT spec, 7.2.8.3.2": [
+    {
+      "hex": "84E1",
+      "name": "ColorSequence"
+    }
+  ],
+  "TIFF/IT spec, 7.2.6": [
+    {
+      "hex": "84E3",
+      "name": "RasterPadding"
+    },
+    {
+      "hex": "84E4",
+      "name": "BitsPerRunLength"
+    },
+    {
+      "hex": "84E5",
+      "name": "BitsPerExtendedRunLength"
+    },
+    {
+      "hex": "84EE",
+      "name": "HCUsage"
+    },
+    {
+      "hex": "84EF",
+      "name": "TrapIndicator"
+    }
+  ],
+  "TIFF/IT spec, 7.2.8.4": [
+    {
+      "hex": "84E6",
+      "name": "ColorTable"
+    },
+    {
+      "hex": "84E9",
+      "name": "ImageColorValue"
+    },
+    {
+      "hex": "84EA",
+      "name": "BackgroundColorValue"
+    },
+    {
+      "hex": "84EB",
+      "name": "PixelIntensityRange"
+    },
+    {
+      "hex": "84EC",
+      "name": "TransparencyIndicator"
+    },
+    {
+      "hex": "84ED",
+      "name": "ColorCharacterization"
+    }
+  ],
+  "TIFF/IT spec, 7.2.9": [
+    {
+      "hex": "84E7",
+      "name": "ImageColorIndicator"
+    },
+    {
+      "hex": "84E8",
+      "name": "BackgroundColorIndicator"
+    }
+  ],
+  "TIFF/IT spec, 7.2.8.3.4": [
+    {
+      "hex": "84F0",
+      "name": "CMYKEquivalent"
+    }
+  ],
+  "TIFF/IT spec": [
+    {
+      "hex": "84F1",
+      "name": "Reserved"
+    },
+    {
+      "hex": "84F2",
+      "name": "Reserved"
+    },
+    {
+      "hex": "84F3",
+      "name": "Reserved"
+    }
+  ],
+  "HD Photo Feature Spec, p. 17": [
+    {
+      "hex": "BC01",
+      "name": "PixelFormat"
+    }
+  ],
+  "HD Photo Feature Spec, p. 23": [
+    {
+      "hex": "BC02",
+      "name": "Transformation"
+    },
+    {
+      "hex": "BC03",
+      "name": "Uncompressed"
+    },
+    {
+      "hex": "BCC3",
+      "name": "AlphaByteCount"
+    }
+  ],
+  "HD Photo Feature Spec, p. 27": [
+    {
+      "hex": "BC04",
+      "name": "ImageType"
+    },
+    {
+      "hex": "BC04",
+      "name": "ImageType"
+    }
+  ],
+  "HD Photo Feature Spec, p. 21": [
+    {
+      "hex": "BC80",
+      "name": "ImageWidth"
+    },
+    {
+      "hex": "BC81",
+      "name": "ImageHeight"
+    },
+    {
+      "hex": "BC82",
+      "name": "WidthResolution"
+    },
+    {
+      "hex": "BC83",
+      "name": "HeightResolution"
+    }
+  ],
+  "HD Photo Feature Spec, p. 22": [
+    {
+      "hex": "BCC0",
+      "name": "ImageOffset"
+    },
+    {
+      "hex": "BCC1",
+      "name": "ImageByteCount"
+    },
+    {
+      "hex": "BCC2",
+      "name": "AlphaOffset"
+    }
+  ],
+  "HD Photo Feature Spec, p. 25": [
+    {
+      "hex": "BCC4",
+      "name": "ImageDataDiscard"
+    }
+  ],
+  "HD Photo Feature Spec, p. 26": [
+    {
+      "hex": "BCC5",
+      "name": "AlphaDataDiscard"
+    }
+  ],
+  "DNG spec (1.3, 2009), p. 47": [
+    {
+      "hex": "C6F5",
+      "name": "ExtraCameraProfiles"
+    }
+  ],
+  "DNG spec (1.4, 2012), p. 74": [
+    {
+      "hex": "C791",
+      "name": "OriginalDefaultFinalSize"
+    }
+  ],
+  "DNG spec (1.4, 2012), p. 75": [
+    {
+      "hex": "C792",
+      "name": "OriginalBestQualityFinalSize"
+    },
+    {
+      "hex": "C793",
+      "name": "OriginalDefaultCropSize"
+    }
+  ],
+  "DNG spec (1.4, 2012), p. 73": [
+    {
+      "hex": "C7A3",
+      "name": "ProfileHueSatMapEncoding"
+    }
+  ],
+  "DNG spec (1.4, 2012), p. 72-3": [
+    {
+      "hex": "C7A4",
+      "name": "ProfileLookTableEncoding"
+    }
+  ],
+  "DNG spec (1.4, 2012), p. 71": [
+    {
+      "hex": "C7A5",
+      "name": "BaselineExposureOffset"
+    },
+    {
+      "hex": "C7A6",
+      "name": "DefaultBlackRender"
+    }
+  ],
+  "DNG spec (1.4, 2012), p. 76": [
+    {
+      "hex": "C7A7",
+      "name": "NewRawImageDigest"
+    },
+    {
+      "hex": "C7A8",
+      "name": "RawToPreviewGain"
+    }
+  ],
+  "DNG spec (1.4, 2012), p. 70": [
+    {
+      "hex": "C7B5",
+      "name": "DefaultUserCrop"
+    }
+  ]
+}

@@ -1,7 +1,14 @@
-// tag values were gotten from
-// http://www.cipa.jp/std/documents/e/DC-008-2012_E.pdf is EXIF 2.3 standard (if link is broken, google by 'EXIF 2.3')
-// https://www.awaresystems.be/imaging/tiff/tifftags.html is
-// https://help.accusoft.com/ImageGear-Net/v22.0/Windows/HTML/topic370.html#hs-inthistopic-2b674a34-bae0-4cde-9f96-10992f358089
+/*
+
+tag values were gotten from
+http://www.cipa.jp/std/documents/e/DC-008-2012_E.pdf is EXIF 2.3 standard (if link is broken, google by 'EXIF 2.3')
+https://www.awaresystems.be/imaging/tiff/tifftags.html is
+https://help.accusoft.com/ImageGear-Net/v22.0/Windows/HTML/topic370.html#hs-inthistopic-2b674a34-bae0-4cde-9f96-10992f358089
+
+you can found more tags (182) in Library of Congress Collections see https://www.loc.gov/preservation/digital/formats/content/tiff_tags.shtml
+some of filtered of them ue can find in this project /data/tiffTags/extraTiffTags.json (grouped by source)
+
+*/
 
 // Tags Level 1 - TIFF Tags
 // by 2.3 standard
@@ -108,7 +115,8 @@ export const TIFF_TAG_StripRowCounts = 0x022F;
 export const TIFF_TAG_XMP = 0x02BC;
 export const TIFF_TAG_ImageID = 0x800D;
 export const TIFF_TAG_ImageLayer = 0x87AC;
-// TODO: [dmitry.makhnev] add description from source https://www.loc.gov/preservation/digital/formats/content/tiff_tags.shtml
+// one form https://www.loc.gov/preservation/digital/formats/content/tiff_tags.shtml
+// because I've found it more than one times in examples
 export const TIFF_TAG_PrintImageMatching = 0xC4A5;
 
 // Tags Level 2 - Exif Private Tags

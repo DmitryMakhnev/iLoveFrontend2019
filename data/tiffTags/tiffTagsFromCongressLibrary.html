@@ -1,0 +1,2217 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<!-- saved from url=(0072)https://www.loc.gov/preservation/digital/formats/content/tiff_tags.shtml -->
+<html><head><meta http-equiv="Content-Type" content="text/html; charset=windows-1252">
+<title>TIFF tags</title>
+
+<meta http-equiv="Content-Style-Type" content="text/css">
+
+<meta name="description" content="Table with definitions for tags used in TIFF headers.  TIFF files declare 
+and describe their content by means of tags in the file header. 
+Tags can indicate the basic geometry of the image, define how the image 
+data is arranged, and indicate such facts as whether one or another image 
+compression option has been used. TIFF tags defined by the 1992 TIFF 6.0 
+specification fall in the first two source categories: baseline 
+and extended. The specification also established procedures for 
+further extension, and this has led to the establishment of tags in the 
+next two categories: private and private IFD. Some of 
+the private and private IFD tags have been codified in two ISO standards: 
+TIFF/EP (ISO 12234-2, 2001) and TIFF/IT (ISO 12639, 2004), while others are documented in DNG_1_1, an Adobe-sponsored extension of the TIFF 6.0 specification. Another significant 
+source for metadata and associated tags is the EXIF_2_2
+specification.">
+<meta name="dc.type" content="webpage">
+<meta name="dc.rights" content="Text is U.S. government work">
+<link href="http://www.digitalpreservation.gov/formats/" rel="dc.relation.isPartOf">
+<meta name="dc.language" content="eng">
+<meta name="dc.subject" content="format sustainability">
+<meta name="dc.subject" content="digital formats">
+<meta name="dc.subject" content="still-image formats">
+<meta name="dc.subject" content="raster image formats">
+<meta name="dc.subject" content="TIFF">
+<meta name="dc.subject" content="image metadata">
+
+<link rel="stylesheet" type="text/css" href="./TIFF tags_files/deog.css" media="screen">
+<script language="JavaScript" type="text/javascript">
+<!--
+var ANewWindow = null; // new
+
+function openPWindow(theURL,winName,features) { //v2.0
+
+// check if window already exists
+
+if (!ANewWindow || ANewWindow.closed) {
+
+// store new ANewWindow in global var
+
+ANewWindow = window.open("phprint.php","Print","status=yes,scrollbars=yes,resizable=yes,toolbar=yes,menubar=yes,location=yes,width=600,height=600");
+
+} else {
+
+ANewWindow.location = theURL;
+
+ANewWindow.focus();
+
+}
+
+}
+
+//-->
+
+</script>
+</head>
+<body>
+
+
+<!-- begin page header -->
+
+
+	<table cellpadding="3" cellspacing="0" border="0" width="100%" class="header-bg">
+        <tbody><tr valign="top">
+          <td class="header">&nbsp;</td>
+          <td align="right"> 
+            <div align="right" class="header"><a href="https://www.loc.gov/preservation/digital/index.html">Digital Preservation Home</a> | <a href="https://www.loc.gov/preservation/digital/formats/index.html">Digital Formats Home</a> &nbsp;&nbsp;&nbsp;</div>
+          </td>
+        </tr>
+     </tbody></table>
+	 
+<table width="100%" border="0" cellpadding="0" cellspacing="0" class="title-bg">
+	<tbody><tr>
+      <td class="title-bg" align="left" valign="middle">
+<h1>&nbsp;<a href="https://www.loc.gov/preservation/digital/formats/index.html">Sustainability of Digital Formats: Planning for Library of Congress Collections</a></h1>
+</td>
+
+<td align="right" class="form">
+<form action="https://www.loc.gov/search/" method="get" id="site_search" class="form">
+<input id="searchtext" name="q" type="text" class="formtext" value=" Search this site" onfocus="this.value=&#39;&#39;">
+<input name="fa" value="subject:format sustainability" type="hidden">
+
+<input type="Submit" value="Go" hspace="0" class="go">
+</form>
+
+</td>
+ </tr>
+		
+        <tr> 
+          <td colspan="2" class="empty-space-format"><img src="./TIFF tags_files/horzgif.gif" alt="" width="100%" height="2"></td>
+        </tr>
+		<tr>
+    <td colspan="2" class="formatNav"><a href="https://www.loc.gov/preservation/digital/formats/intro/intro.shtml">Introduction</a> | <a href="https://www.loc.gov/preservation/digital/formats/sustain/sustain.shtml">Sustainability Factors</a> | <a href="https://www.loc.gov/preservation/digital/formats/content/content_categories.shtml">Content Categories</a> | 
+	<a href="https://www.loc.gov/preservation/digital/formats/fdd/descriptions.shtml">Format Descriptions </a> | <a href="https://www.loc.gov/preservation/digital/formats/contact_format.shtml">Contact</a></td>
+  </tr>
+<!--
+  <tr>
+    <td height="20" colspan="3" align="right" bgcolor="#ffffff"> <a href="http://www.digitalpreservation.gov/formats/phprint_formats.php" target="Print" onClick="openPWindow(); ANewWindow.focus();" class="xsmall"><img src="http://www.digitalpreservation.gov/formats/print.gif" alt="Printer-friendly version" border="0" align="middle">Printer-friendly version</a>&nbsp;&nbsp;&nbsp;</td>
+  </tr>-->
+      </tbody></table>
+		
+<!-- end page header --> 
+
+<!-- begin body area -->
+
+<!-- startprint -->	
+
+
+
+<table width="90%" border="0" cellspacing="0" cellpadding="8">
+
+  <tbody><tr valign="top">
+
+<td colspan="2" class="intro_top">
+
+
+
+<a href="https://www.loc.gov/preservation/digital/formats/content/content_categories.shtml"><b>Content Categories</b></a> &gt;&gt; <a href="https://www.loc.gov/preservation/digital/formats/content/still.shtml">Still Image</a> | <a href="https://www.loc.gov/preservation/digital/formats/content/sound.shtml">Sound</a> | <a href="https://www.loc.gov/preservation/digital/formats/content/text.shtml">Textual</a> | <a href="https://www.loc.gov/preservation/digital/formats/content/video.shtml">Moving Image</a> | <a href="https://www.loc.gov/preservation/digital/formats/content/webarch.shtml">Web Archive</a>  | <a href="https://www.loc.gov/preservation/digital/formats/content/dataset.shtml">Datasets</a>  | <a href="https://www.loc.gov/preservation/digital/formats/content/gis.shtml">Geospatial</a> | <a href="https://www.loc.gov/preservation/digital/formats/fdd/generic_fdd.shtml">Generic</a>
+
+
+
+<div class="sectionhead">
+
+<a name="top"></a>
+
+<h2><a href="https://www.loc.gov/preservation/digital/formats/content/still.shtml">Still Images</a> &gt;&gt; Tags for TIFF, DNG, and Related Specifications</h2>
+
+</div>
+
+
+
+<div class="toc">
+
+<b>Table of Contents</b><br>
+
+• <a href="https://www.loc.gov/preservation/digital/formats/content/tiff_tags.shtml#intro">Introduction</a><br>
+
+• <a href="https://www.loc.gov/preservation/digital/formats/content/tiff_tags.shtml#sources">Sources for tag specification</a><br>
+
+• <a href="https://www.loc.gov/preservation/digital/formats/content/tiff_tags.shtml#table_1">Tags in numerical order</a><br>
+
+</div>
+
+
+
+<p><b class="name"><a name="intro"></a>Introduction</b><br>
+
+The flexible and extensible 
+
+  TIFF format has provided long service for digital imaging. TIFF files declare 
+
+  and describe their content by means of <em>tags</em> in the header and in Image 
+
+  File Directories (IFDs) within the file. Tags can indicate the basic geometry 
+
+  of the image, define how the image data is arranged, and indicate such facts 
+
+  as whether one or another image compression option has been used. TIFF tags 
+
+  defined by the 1992 TIFF 6.0 <a href="http://partners.adobe.com/public/developer/en/tiff/TIFF6.pdf">specification</a> 
+
+  fall in the first two source categories listed below: <em>baseline</em> and 
+
+  <em>extended</em>. The specification also established procedures for further 
+
+  extension, and this has led to the establishment of tags in the two additional 
+
+  categories: <em>private</em> and <em>private IFD</em>. Some of the private and 
+
+  private IFD tags have been codified in additional specifications: <a href="https://www.loc.gov/preservation/digital/formats/fdd/fdd000073.shtml">TIFF/EP</a> 
+
+  (ISO 12234-2, 2001), <a href="https://www.loc.gov/preservation/digital/formats/fdd/fdd000072.shtml">TIFF/IT</a> (ISO 12639, 2004), DNG, and <a href="https://www.loc.gov/preservation/digital/formats/fdd/fdd000146.shtml">EXIF_2_2</a>, 
+
+  discussed in the private IFD section below. Although the format description for DNG at this Web site (at the time of writing) describes version 1.1 (<a href="https://www.loc.gov/preservation/digital/formats/fdd/fdd000188.shtml">DNG_1_1</a>; published by Adobe in 2005), the tag list below includes new tags added in DNG versions 1.2, 1.3, and 1.4 (2012).</p>
+
+		
+
+		
+
+    <p>Although not a true TIFF implementation, Windows Media Photo/HD Photo (<a href="https://www.loc.gov/preservation/digital/formats/fdd/fdd000243.shtml">WMP_1_0</a>; now standardized as JPEG XR, ISO/IEC 29199-2:2012) employs a container format that borrows heavily from 
+
+      TIFF and adds a few new tags of interest, further extending the tag set 
+
+      in at least an informal sense. There are other proprietary or industry specifications 
+
+      that continue to extend TIFF, e.g., <a href="https://www.loc.gov/preservation/digital/formats/fdd/fdd000279.shtml">GeoTIFF_1_0</a>, HylaFAX, and the Molecular Dynamics 
+
+      GEL format, and some of these tags have been folded into the table and identified 
+
+      in the short definitions or notes.</p>
+
+	  
+
+      <p>The TIFF specification requires that tags be encoded in numerical order 
+
+        and that is the sequence used in the table below. The <a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/gps.html">GPS</a> 
+
+        and <a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/interoperability.html">interoperability</a> 
+
+        tags appear to employ separate numerical series and they have been omitted 
+
+        from the table; <a href="https://www.loc.gov/preservation/digital/formats/contact_format.shtml">comments welcome</a>. 
+
+        The fifth column in the table indicates the <em>source</em> for each tag, 
+
+        and these sources are described below. The table and the data it contains 
+
+        owe a great debt to the <a href="http://www.awaresystems.be/imaging/tiff/tifftags.html">AWare 
+
+        Systems</a> Web site. Many references in these tables are linked to additional 
+
+        information provided at the AWare site. Interested persons may also wish 
+
+        to consult Ross Finlayson's <a href="http://www.tiki-lounge.com/~raf/tiff/fields.html">TIFF Web page</a>.</p>
+
+	<hr>
+
+	<p><b class="name"><a name="sources"></a>Sources for tag specifications</b><br><br>
+
+
+
+      • <strong>TIFF Baseline</strong>. The <em>baseline</em> set of tags were 
+
+        documented in TIFF 5.0 and carried over on pages 11-47 of the 1992 TIFF 
+
+        6.0 <a href="http://partners.adobe.com/public/developer/en/tiff/TIFF6.pdf">specification</a>.<br>
+
+      <br>
+
+      • <strong>TIFF Extended</strong>. The <em>extended</em> set includes some 
+
+        additional tags and added values for existing tags, as documented on pages 
+
+        48-115 of the TIFF 6.0 <a href="http://partners.adobe.com/public/developer/en/tiff/TIFF6.pdf">specification</a>.<br>
+
+      <br>
+
+      • <strong>TIFF Private</strong>. Originally, the term <em>private</em> 
+
+        meant just that. The TIFF 6.0 <a href="http://partners.adobe.com/public/developer/en/tiff/TIFF6.pdf">specification</a> 
+
+        (page 8) states, "An organization might wish to store information 
+
+        meaningful to only that organization . . . . Tags numbered 32768 or higher, 
+
+        sometimes called private tags, are reserved for that purpose. Upon request, 
+
+        the TIFF administrator . . . will allocate and register one or more private 
+
+        tags for an organization . . . . You do not need to tell the TIFF administrator 
+
+        what you plan to use them for, but giving us this information may help 
+
+        other developers to avoid some duplication of effort." Over time, 
+
+        however, many private tags have become well established and well documented, 
+
+        e.g., tag 34675 for the ICC profile, dubbed <em>InterColorProfile</em> in the <a href="https://www.loc.gov/preservation/digital/formats/fdd/fdd000073.shtml">TIFF/EP</a> standard. Thus, many members of the private 
+
+        tag class can be viewed as open <em>extensions</em> rather than as containers 
+
+        for secret information.<br><br>
+
+• <strong>TIFF/EP</strong>, <strong>TIFF/IT</strong>, and <strong>DNG</strong>.  A number of tags, some of which may once have been "private," have been defined in <a href="https://www.loc.gov/preservation/digital/formats/fdd/fdd000073.shtml">TIFF/EP</a> (ISO 12234-2, 2001), <a href="https://www.loc.gov/preservation/digital/formats/fdd/fdd000072.shtml">TIFF/IT</a> (ISO 12639, 2004), and <a href="https://www.loc.gov/preservation/digital/formats/fdd/fdd000188.shtml">DNG_1_1</a>, an Adobe-sponsored extension of the TIFF 6.0 specification. As noted above, although this Web site's most recent description for DNG is version 1.1 (specfication published 2005), this tag list includes new tags added in versions 1.2, 1.3, and 1.4.<br>
+<br>
+
+		
+
+      • <strong>TIFF Private IFD</strong> The TIFF 6.0 <a href="http://partners.adobe.com/public/developer/en/tiff/TIFF6.pdf">specification</a> 
+
+        (page 9) states, "If you need more than 10 tags, we suggest that you 
+
+        reserve a single private tag, define it as a LONG TIFF data type, and 
+
+        use its value as a pointer (offset) to a private IFD [image file directory] 
+
+        or other data structure of your choosing. Within that IFD, you can use 
+
+        whatever tags you want, since no one else will know that it is an IFD 
+
+        unless you tell them." As with <em>private tags</em>, we can understand 
+
+        <em>private IFDs</em> as an extension to TIFF, often very public and well 
+
+        documented.<br>
+
+        <br>
+
+        The private IFD tags of greatest interest to the Library of Congress are 
+
+        those associated with the <a href="https://www.loc.gov/preservation/digital/formats/fdd/fdd000146.shtml">EXIF_2_2</a> 
+
+        specification, pertaining to image generation by digital still cameras. 
+
+        Exif is an abbreviation for <em>EXchangeable Image File format</em>,  
+
+        although Exif does not relate to TIFF as, say, <a href="https://www.loc.gov/preservation/digital/formats/fdd/fdd000018.shtml">JFIF</a> relates to <a href="https://www.loc.gov/preservation/digital/formats/fdd/fdd000017.shtml">JPEG_DCT</a>. The Exif IFD is pointed to by the Private Exif IFD tag 34665. This and other Exif tags are listed in the numerical table below.<br>
+
+        <br>
+
+For links to Exif specifications and other related information, 
+
+            see <a href="https://www.loc.gov/preservation/digital/formats/fdd/fdd000146.shtml">EXIF_2_2</a>. The Exif standard established three private IFDs, and tags from the main Exif IFD are included in the list below.  Tags for the other two Exif IFDs are listed at the Aware Web site: <a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/gps.html">GPS 
+
+            IFD</a>, for positioning information, and <a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/interoperability.html">Interoperability IFD</a>, used to encode compability information. With numerical sequences of their own, the GPS and Interoperability tags are not included in the table below. A third-party listing of all Exif tags is available from <a href="http://www.exiv2.org/tags.html">Exiv2</a>.<br><br>
+
+ 
+
+
+
+    • <strong>HD Photo tags.</strong> Although not a true TIFF implementation, Windows Media Photo/HD Photo (<a href="https://www.loc.gov/preservation/digital/formats/fdd/fdd000243.shtml">WMP_1_0</a>; now standardized as JPEG XR, ISO/IEC 29199-2:2012) employs a container format that borrows from 
+
+      TIFF and adds a few new tags of interest, further extending the tag set 
+
+      in at least an informal sense.
+
+     </p><hr><br>
+
+<b class="name"><a name="table_1"></a>Tags in Numerical Order</b>
+
+<br>
+<script type="text/javascript">
+    window.addEventListener('load', () => {
+        var tbody = document.getElementById('tbody');
+        var rows = Array.prototype.slice.call(tbody.children);
+        var result = rows.map(row => {
+            const tds = row.children;
+
+            const a = tds[2].querySelector('a');
+
+            return {
+                dec: tds[0].innerText,
+                hex: tds[1].innerText,
+                name: tds[2].innerText,
+                link: a ? a.href : null,
+                shortDescription: tds[3].innerText,
+                sourceOfTag: tds[4].innerText,
+                note: tds[5].innerHTML
+            }
+        });
+
+        console.log(JSON.stringify(result));
+    });
+</script>
+          <table cellspacing="0" cellpadding="4" border="1">
+
+<tbody><tr><th colspan="2">Code</th><th rowspan="2">Name</th><th rowspan="2">Short description</th><th rowspan="2">Source of tag</th><th rowspan="2">Note</th></tr>
+
+            <tr><th>Dec</th><th>Hex</th></tr></tbody>
+
+
+
+<tbody align="left" valign="top" id="tbody">
+
+
+
+              <tr><td>254</td><td>00FE</td><td nowrap="nowrap"><a href="http://www.awaresystems.be/imaging/tiff/tifftags/newsubfiletype.html">NewSubfileType</a></td><td>A general indication of the kind of data contained in this subfile.</td><td>Baseline</td><td>Req'd in LC RFP97-6 <a href="https://memory.loc.gov/ammem/prpsal9/rfp9c.html#G">Section 
+
+            C.4.7</a>.<br><br>Usage rule in JHOVE <a href="http://hul.harvard.edu/jhove/tiff-hul.html">TIFF module</a>.<br><br>Mandatory for TIFF/EP.</td></tr>
+
+              <tr><td>255</td><td>00FF</td><td nowrap="nowrap"><a href="http://www.awaresystems.be/imaging/tiff/tifftags/subfiletype.html">SubfileType</a></td><td>A general indication of the kind of data contained in this subfile.</td><td>Baseline</td><td>&nbsp;</td></tr>
+
+              <tr><td>256</td><td>0100</td><td nowrap="nowrap"><a href="http://www.awaresystems.be/imaging/tiff/tifftags/imagewidth.html">ImageWidth</a></td><td>The number of columns in the image, i.e., the number of pixels per row.</td><td>Baseline</td>
+
+          <td>Listed in <a href="https://memory.loc.gov/ammem/about/standardsTable4.pdf"><em>LoC Baseline Tags</em></a>.<br><br>Req'd in LC RFP97-6 <a href="https://memory.loc.gov/ammem/prpsal9/rfp9c.html#G">Section C.4.7</a>. Provide actual pixel count.<br><br>Req'd in LC NDNP <a href="https://www.loc.gov/ndnp/guidelines/archive/TIFFSpecs.pdf">TIFF profile</a>.  See Appendix B. Image width in pixels.<br><br>Mandatory for TIFF 6.0 classes B, G, P, R, and Y.<a href="https://www.loc.gov/preservation/digital/formats/content/tiff_tags.shtml#1"><sup>1</sup></a><br><br>Mandatory for TIFF/EP.<br><br>For Exif, mandatory in primary TIFF IFD.</td>
+
+        </tr>
+
+              <tr><td>257</td><td>0101</td><td nowrap="nowrap"><a href="http://www.awaresystems.be/imaging/tiff/tifftags/imagelength.html">ImageLength</a></td><td>The number of rows of pixels in the image.</td><td>Baseline</td><td>Listed in <a href="https://memory.loc.gov/ammem/about/standardsTable4.pdf"><em>LoC Baseline Tags</em></a>.<br><br>Req'd in LC RFP97-6 <a href="https://memory.loc.gov/ammem/prpsal9/rfp9c.html#G">Section 
+
+            C.4.7</a>. Provide actual pixel count.<br><br>Req'd in LC NDNP <a href="https://www.loc.gov/ndnp/guidelines/archive/TIFFSpecs.pdf">TIFF profile</a>. Image length in pixels.<br><br>Mandatory for TIFF 6.0 classes B, G, P, R, and Y.<a href="https://www.loc.gov/preservation/digital/formats/content/tiff_tags.shtml#1"><sup>1</sup></a><br><br>Mandatory for TIFF/EP.<br><br>For Exif, mandatory in primary TIFF IFD.</td></tr>
+
+              <tr><td>258</td><td>0102</td><td nowrap="nowrap"><a href="http://www.awaresystems.be/imaging/tiff/tifftags/bitspersample.html">BitsPerSample</a></td><td>Number of bits per component.</td><td>Baseline</td><td><p>Listed in <a href="https://memory.loc.gov/ammem/about/standardsTable4.pdf"><em>LoC Baseline Tags</em></a>.<br><br>Req'd 
+
+              in LC RFP97-6 <a href="https://memory.loc.gov/ammem/prpsal9/rfp9c.html#G">Section 
+
+              C.4.7</a>.<br>
+
+              <br>
+
+              Mandatory for TIFF 6.0 classes G, P, R, and Y.<a href="https://www.loc.gov/preservation/digital/formats/content/tiff_tags.shtml#1"><sup>1</sup></a><br>
+
+              <br>
+
+              Mandatory for TIFF/EP.<br>
+
+              <br>
+
+              For Exif, mandatory in primary TIFF IFD.<br>
+
+            <br>Required by <a href="http://purl.oclc.org/DLF/benchrepro0212">DLF benchmark guidelines</a></p></td></tr>
+
+              <tr><td>259</td><td>0103</td><td nowrap="nowrap"><a href="http://www.awaresystems.be/imaging/tiff/tifftags/compression.html">Compression</a></td><td>Compression scheme used on the image data.</td><td>Baseline</td><td>Listed in <a href="https://memory.loc.gov/ammem/about/standardsTable4.pdf"><em>LoC Baseline Tags</em></a>. Sample values: 1=uncompressed and 4=CCITT Group 4.<br><br>Req'd in LC RFP97-6 <a href="https://memory.loc.gov/ammem/prpsal9/rfp9c.html#G">Section 
+
+            C.4.7</a>.<br><br>Mandatory for TIFF 6.0 classes B, G, P, R, and Y.<a href="https://www.loc.gov/preservation/digital/formats/content/tiff_tags.shtml#1"><sup>1</sup></a><br><br>Mandatory for TIFF/EP.<br><br>For Exif, mandatory in primary TIFF IFD.<br>
+
+            <br>Required by <a href="http://purl.oclc.org/DLF/benchrepro0212">DLF benchmark guidelines</a></td></tr>
+
+              <tr><td>262</td><td>0106</td><td nowrap="nowrap"><a href="http://www.awaresystems.be/imaging/tiff/tifftags/photometricinterpretation.html">PhotometricInterpretation</a></td><td>The color space of the image data.</td><td>Baseline</td>
+              <td>Listed in <a href="https://memory.loc.gov/ammem/about/standardsTable4.pdf"><em>LoC Baseline Tags</em></a>. Sample values: 1=black is zero and 2=RGB. Document also states "RGB is assumed to be sRGB; if RGB, an ICC profile should be present in the 34675 tag."<br>
+                <br>Req'd 
+
+              in LC RFP97-6 <a href="https://memory.loc.gov/ammem/prpsal9/rfp9c.html#G">Section 
+
+              C.4.7</a><br>
+
+              <br>
+
+              Mandatory for TIFF 6.0 classes B, G, P, R, and Y.<a href="https://www.loc.gov/preservation/digital/formats/content/tiff_tags.shtml#1"><sup>1</sup></a><br>
+
+              <br>
+
+              Mandatory for TIFF/EP.<br>
+
+            <br>
+
+            Mandatory for <a href="https://www.loc.gov/preservation/digital/formats/fdd/fdd000279.shtml">GeoTIFF_1_0</a>.<br>
+
+              <br>
+
+              For Exif, mandatory in primary TIFF IFD.<br>
+
+            <br>Required by <a href="http://purl.oclc.org/DLF/benchrepro0212">DLF benchmark guidelines</a></td></tr>
+
+              <tr><td>263</td><td>0107</td><td nowrap="nowrap"><a href="http://www.awaresystems.be/imaging/tiff/tifftags/threshholding.html">Threshholding</a></td><td>For black and white TIFF files that represent shades of gray, the technique used to convert from gray to black and white pixels.</td><td>Baseline</td><td>Usage rule in JHOVE <a href="http://hul.harvard.edu/jhove/tiff-hul.html">TIFF module</a>.</td></tr>
+
+              <tr><td>264</td><td>0108</td><td nowrap="nowrap"><a href="http://www.awaresystems.be/imaging/tiff/tifftags/cellwidth.html">CellWidth</a></td><td>The width of the dithering or halftoning matrix used to create a dithered or halftoned bilevel file.</td><td>Baseline</td><td>&nbsp;</td></tr>
+
+              <tr><td>265</td><td>0109</td><td nowrap="nowrap"><a href="http://www.awaresystems.be/imaging/tiff/tifftags/celllength.html">CellLength</a></td><td>The length of the dithering or halftoning matrix used to create a dithered or halftoned bilevel file.</td><td>Baseline</td><td>Usage rule in JHOVE <a href="http://hul.harvard.edu/jhove/tiff-hul.html">TIFF module</a>.</td></tr>
+
+              <tr><td>266</td><td>010A</td><td nowrap="nowrap"><a href="http://www.awaresystems.be/imaging/tiff/tifftags/fillorder.html">FillOrder</a></td><td>The logical order of bits within a byte.</td><td>Baseline</td><td>&nbsp;</td></tr>
+
+			                <tr><td>269</td><td>010D</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/documentname.html">DocumentName</a></td><td>The name of the document from which this image was scanned.</td><td>Extended</td>
+
+          <td>Listed in <a href="https://memory.loc.gov/ammem/about/standardsTable4.pdf"><em>LoC Baseline Tags</em></a>.<br>
+            <br>
+            Req'd in LC RFP97-6 <a href="https://memory.loc.gov/ammem/prpsal9/rfp9c.html#G">Section 
+
+            C.4.7</a>. Provide collection identifier and filename.<br>
+            <br>
+
+			Req'd in LC NDNP <a href="https://www.loc.gov/ndnp/guidelines/archive/TIFFSpecs.pdf">TIFF profile</a>.  Provide microfilm reel number or normalized LCCN.
+
+			<br><br>Also used by HD Photo.</td>
+
+        </tr>
+
+              <tr><td>270</td><td>010E</td><td nowrap="nowrap"><a href="http://www.awaresystems.be/imaging/tiff/tifftags/imagedescription.html">ImageDescription</a></td><td>A string that describes the subject of the image.</td><td>Baseline</td>
+
+          <td>Also used by HD Photo</td>
+
+        </tr>
+
+              <tr><td>271</td><td>010F</td><td nowrap="nowrap"><a href="http://www.awaresystems.be/imaging/tiff/tifftags/make.html">Make</a></td><td>The scanner manufacturer.</td><td>Baseline</td>
+
+          <td>Listed in <a href="https://memory.loc.gov/ammem/about/standardsTable4.pdf"><em>LoC Baseline Tags</em></a>.<br><br>Req'd in LC NDNP <a href="https://www.loc.gov/ndnp/guidelines/archive/TIFFSpecs.pdf">TIFF profile</a>.
+
+<br><br>Also used by HD Photo.<br><br>Mandatory for TIFF/EP.</td>
+
+        </tr>
+
+              <tr><td>272</td><td>0110</td><td nowrap="nowrap"><a href="http://www.awaresystems.be/imaging/tiff/tifftags/model.html">Model</a></td><td>The scanner model name or number.</td><td>Baseline</td>
+
+          <td>Listed in <a href="https://memory.loc.gov/ammem/about/standardsTable4.pdf"><em>LoC Baseline Tags</em></a>.<br><br>Req'd in LC NDNP <a href="https://www.loc.gov/ndnp/guidelines/archive/TIFFSpecs.pdf">TIFF profile</a>.  Provide "model name, model number, serial number."
+
+			<br><br>Also used by HD Photo.<br><br>Mandatory for TIFF/EP.</td>
+
+        </tr>
+
+              <tr><td>273</td><td>0111</td><td nowrap="nowrap"><a href="http://www.awaresystems.be/imaging/tiff/tifftags/stripoffsets.html">StripOffsets</a></td><td>For each strip, the byte offset of that strip.</td><td>Baseline</td><td>Listed in <a href="https://memory.loc.gov/ammem/about/standardsTable4.pdf"><em>LoC Baseline Tags</em></a>.<br><br>Req'd in LC RFP97-6 <a href="https://memory.loc.gov/ammem/prpsal9/rfp9c.html#G">Section 
+
+            C.4.7</a><br><br>Mandatory for TIFF 6.0 classes B, G, P, R, and Y.<a href="https://www.loc.gov/preservation/digital/formats/content/tiff_tags.shtml#1"><sup>1</sup></a> (Files outside of these classes may use tiles and tags 322, 323, 324, and 325; <a href="https://www.loc.gov/preservation/digital/formats/contact_format.shtml">Comments welcome</a>.)<br><br>Mandatory in TIFF/EP for stripped images.<br><br>For Exif, mandatory in primary TIFF IFD.</td></tr>
+
+              <tr><td>274</td><td>0112</td><td nowrap="nowrap"><a href="http://www.awaresystems.be/imaging/tiff/tifftags/orientation.html">Orientation</a></td><td>The orientation of the image with respect to the rows and columns.</td><td>Baseline</td><td>
+
+			Req'd in LC NDNP <a href="https://www.loc.gov/ndnp/guidelines/archive/TIFFSpecs.pdf">TIFF profile</a>.<br><br>Mandatory for TIFF/EP.</td></tr>
+
+              <tr><td>277</td><td>0115</td><td nowrap="nowrap"><a href="http://www.awaresystems.be/imaging/tiff/tifftags/samplesperpixel.html">SamplesPerPixel</a></td><td>The number of components per pixel.</td><td>Baseline</td><td>Listed in <a href="https://memory.loc.gov/ammem/about/standardsTable4.pdf"><em>LoC Baseline Tags</em></a>. Sample values: 8 8 8.<br><br>Req'd in LC RFP97-6 <a href="https://memory.loc.gov/ammem/prpsal9/rfp9c.html#G">Section 
+
+            C.4.7</a>.<br><br>
+
+			Req'd in LC NDNP <a href="https://www.loc.gov/ndnp/guidelines/archive/TIFFSpecs.pdf">TIFF profile</a>.<br><br>Mandatory for TIFF 6.0 classes R and Y.<a href="https://www.loc.gov/preservation/digital/formats/content/tiff_tags.shtml#1"><sup>1</sup><br><br>For Exif, mandatory in primary TIFF IFD.</a><br>
+
+            <br>Required by <a href="http://purl.oclc.org/DLF/benchrepro0212">DLF benchmark guidelines</a></td></tr>
+
+              <tr><td>278</td><td>0116</td><td nowrap="nowrap"><a href="http://www.awaresystems.be/imaging/tiff/tifftags/rowsperstrip.html">RowsPerStrip</a></td><td>The number of rows per strip.</td><td>Baseline</td><td>Listed in <a href="https://memory.loc.gov/ammem/about/standardsTable4.pdf"><em>LoC Baseline Tags</em></a>.<br><br>Req'd in LC RFP97-6 <a href="https://memory.loc.gov/ammem/prpsal9/rfp9c.html#G">Section 
+
+            C.4.7</a>.<br><br>Mandatory for TIFF 6.0 classes B, G, P, R, and Y.<a href="https://www.loc.gov/preservation/digital/formats/content/tiff_tags.shtml#1"><sup>1</sup></a> (Files outside of these classes may use tiles and tags 322, 323, 324, and 325; <a href="https://www.loc.gov/preservation/digital/formats/contact_format.shtml">Comments welcome</a>.)<br><br>Mandatory in TIFF/EP for stripped images.<br><br>For Exif, mandatory in primary TIFF IFD.</td></tr>
+
+              <tr><td>279</td><td>0117</td><td nowrap="nowrap"><a href="http://www.awaresystems.be/imaging/tiff/tifftags/stripbytecounts.html">StripByteCounts</a></td><td>For each strip, the number of bytes in the strip after compression.</td><td>Baseline</td><td>Listed in <a href="https://memory.loc.gov/ammem/about/standardsTable4.pdf"><em>LoC Baseline Tags</em></a>.<br><br>Req'd in LC RFP97-6 <a href="https://memory.loc.gov/ammem/prpsal9/rfp9c.html#G">Section 
+
+            C.4.7</a><br><br>Mandatory for TIFF 6.0 classes B, G, P, R, and Y.<a href="https://www.loc.gov/preservation/digital/formats/content/tiff_tags.shtml#1"><sup>1</sup></a> (Files outside of these classes may use tiles and tags 322, 323, 324, and 325; <a href="https://www.loc.gov/preservation/digital/formats/contact_format.shtml">Comments welcome</a>.)<br><br>Mandatory in TIFF/EP for stripped images.<br><br>For Exif, mandatory in primary TIFF IFD.</td></tr>
+
+              <tr><td>280</td><td>0118</td><td nowrap="nowrap"><a href="http://www.awaresystems.be/imaging/tiff/tifftags/minsamplevalue.html">MinSampleValue</a></td><td>The minimum component value used.</td><td>Baseline</td><td>&nbsp;</td></tr>
+
+              <tr><td>281</td><td>0119</td><td nowrap="nowrap"><a href="http://www.awaresystems.be/imaging/tiff/tifftags/maxsamplevalue.html">MaxSampleValue</a></td><td>The maximum component value used.</td><td>Baseline</td><td>&nbsp;</td></tr>
+
+              <tr><td>282</td><td>011A</td><td nowrap="nowrap"><a href="http://www.awaresystems.be/imaging/tiff/tifftags/xresolution.html">XResolution</a></td><td>The number of pixels per ResolutionUnit in the ImageWidth direction.</td><td>Baseline</td><td>Listed in <a href="https://memory.loc.gov/ammem/about/standardsTable4.pdf"><em>LoC Baseline Tags</em></a>.<br><br>Req'd in LC RFP97-6 <a href="https://memory.loc.gov/ammem/prpsal9/rfp9c.html#G">Section 
+
+            C.4.7</a>. Provide actual pixel count or pixels per inch.<br><br>
+
+            Req'd in LC NDNP <a href="https://www.loc.gov/ndnp/guidelines/archive/TIFFSpecs.pdf">TIFF profile</a>. Xresolution is a Rational; ImageWidth (Tag 256) 
+
+            is the numerator and the length of the source (measured in the units 
+
+            specified in ResolutionUnit (Tag 296)) is the denominator.<br><br>Mandatory for TIFF 6.0 classes B, G, P, R, and Y.<a href="https://www.loc.gov/preservation/digital/formats/content/tiff_tags.shtml#1"><sup>1</sup></a><br><br>Mandatory for TIFF/EP.<br><br>For Exif, mandatory in primary TIFF IFD.<br>
+
+            <br>Required by <a href="http://purl.oclc.org/DLF/benchrepro0212">DLF benchmark guidelines</a></td>
+
+        </tr>
+
+              <tr><td>283</td><td>011B</td><td nowrap="nowrap"><a href="http://www.awaresystems.be/imaging/tiff/tifftags/yresolution.html">YResolution</a></td><td>The number of pixels per ResolutionUnit in the ImageLength direction.</td><td>Baseline</td><td>Listed in <a href="https://memory.loc.gov/ammem/about/standardsTable4.pdf"><em>LoC Baseline Tags</em></a>.<br><br>Req'd in LC RFP97-6 <a href="https://memory.loc.gov/ammem/prpsal9/rfp9c.html#G">Section 
+
+            C.4.7</a>. Provide actual pixel count or pixels per inch.<br><br>Req'd in LC NDNP <a href="https://www.loc.gov/ndnp/guidelines/archive/TIFFSpecs.pdf">TIFF profile</a>. Yresolution is a Rational; ImageLength (Tag 257) 
+
+            is the numerator and the width of the source (measured in the units 
+
+            specified in ResolutionUnit (Tag 296)) is the denominator.<br><br>Mandatory for TIFF 6.0 classes B, G, P, R, and Y.<a href="https://www.loc.gov/preservation/digital/formats/content/tiff_tags.shtml#1"><sup>1</sup></a><br><br>Mandatory for TIFF/EP.<br><br>For Exif, mandatory in primary TIFF IFD.<br>
+
+            <br>Required by <a href="http://purl.oclc.org/DLF/benchrepro0212">DLF benchmark guidelines</a></td></tr>
+
+              <tr><td>284</td><td>011C</td><td nowrap="nowrap"><a href="http://www.awaresystems.be/imaging/tiff/tifftags/planarconfiguration.html">PlanarConfiguration</a></td><td>How the components of each pixel are stored.</td><td>Baseline</td><td>Mandatory for TIFF/EP.</td></tr>
+
+              <tr><td>285</td><td>011D</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/pagename.html">PageName</a></td><td>The name of the page from which this image was scanned.</td><td>Extended</td>
+
+          <td>Also used by HD Photo</td>
+
+        </tr>
+
+              <tr><td>286</td><td>011E</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/xposition.html">XPosition</a></td><td>X position of the image.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>287</td><td>011F</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/yposition.html">YPosition</a></td><td>Y position of the image.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>288</td><td>0120</td><td nowrap="nowrap"><a href="http://www.awaresystems.be/imaging/tiff/tifftags/freeoffsets.html">FreeOffsets</a></td><td>For each string of contiguous unused bytes in a TIFF file, the byte offset of the string.</td><td>Baseline</td><td>&nbsp;</td></tr>
+
+              <tr><td>289</td><td>0121</td><td nowrap="nowrap"><a href="http://www.awaresystems.be/imaging/tiff/tifftags/freebytecounts.html">FreeByteCounts</a></td><td>For each string of contiguous unused bytes in a TIFF file, the number of bytes in the string.</td><td>Baseline</td><td>&nbsp;</td></tr>
+
+              <tr><td>290</td><td>0122</td><td nowrap="nowrap"><a href="http://www.awaresystems.be/imaging/tiff/tifftags/grayresponseunit.html">GrayResponseUnit</a></td><td>The precision of the information contained in the GrayResponseCurve.</td><td>Baseline</td><td>&nbsp;</td></tr>
+
+              <tr><td>291</td><td>0123</td><td nowrap="nowrap"><a href="http://www.awaresystems.be/imaging/tiff/tifftags/grayresponsecurve.html">GrayResponseCurve</a></td><td>For grayscale data, the optical density of each possible pixel value.</td><td>Baseline</td><td>&nbsp;</td></tr>
+
+              <tr><td>292</td><td>0124</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/t4options.html">T4Options</a></td><td>Options for Group 3 Fax compression</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>293</td><td>0125</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/t6options.html">T6Options</a></td><td>Options for Group 4 Fax compression</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>296</td><td>0128</td><td nowrap="nowrap"><a href="http://www.awaresystems.be/imaging/tiff/tifftags/resolutionunit.html">ResolutionUnit</a></td><td>The unit of measurement for XResolution and YResolution.</td><td>Baseline</td><td>Listed in <a href="https://memory.loc.gov/ammem/about/standardsTable4.pdf"><em>LoC Baseline Tags</em></a>.<br><br>Req'd in LC RFP97-6 <a href="https://memory.loc.gov/ammem/prpsal9/rfp9c.html#G">Section 
+
+            C.4.7</a>. Code <em>1</em> for actual pixel count or <em>2</em> for pixels per inch.<br><br>Req'd in LC NDNP <a href="https://www.loc.gov/ndnp/guidelines/archive/TIFFSpecs.pdf">TIFF profile</a>. Value <em>2</em> for inches is preferred.<br><br>Mandatory for TIFF 6.0 classes B, G, P, R, and Y.<a href="https://www.loc.gov/preservation/digital/formats/content/tiff_tags.shtml#1"><sup>1</sup></a><br><br>Mandatory for TIFF/EP.<br><br>For Exif, mandatory in primary TIFF IFD.</td></tr>
+
+              <tr><td>297</td><td>0129</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/pagenumber.html">PageNumber</a></td><td>The page number of the page from which this image was scanned.</td><td>Extended</td>
+
+          <td>Also used by HD Photo</td>
+
+        </tr>
+
+              <tr><td>301</td><td>012D</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/transferfunction.html">TransferFunction</a></td><td>Describes a transfer function for the image in tabular style.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>305</td><td>0131</td><td nowrap="nowrap"><a href="http://www.awaresystems.be/imaging/tiff/tifftags/software.html">Software</a></td><td>Name and version number of the software package(s) used to create the image.</td><td>Baseline</td>
+
+          <td>Listed in <a href="https://memory.loc.gov/ammem/about/standardsTable4.pdf"><em>LoC Baseline Tags</em></a>. Document states "Acceptable to include only capture software; preferred to list both capture and post-capture processing software (if applicable), separated by ";".<br>
+            <br>Req'd in LC NDNP <a href="https://www.loc.gov/ndnp/guidelines/archive/TIFFSpecs.pdf">TIFF profile</a>.  Include version.
+
+			<br><br>Also used by HD Photo.<br><br>Mandatory for TIFF/EP.</td>
+
+        </tr>
+
+              <tr><td>306</td><td>0132</td><td nowrap="nowrap"><a href="http://www.awaresystems.be/imaging/tiff/tifftags/datetime.html">DateTime</a></td><td>Date and time of image creation.</td><td>Baseline</td>
+
+          <td>Listed in <a href="https://memory.loc.gov/ammem/about/standardsTable4.pdf"><em>LoC Baseline Tags</em></a>.<br><br>Req'd in LC RFP97-6 <a href="https://memory.loc.gov/ammem/prpsal9/rfp9c.html#G">Section 
+
+            C.4.7</a>. Datetime when scanned.<br><br>Req'd in LC NDNP <a href="https://www.loc.gov/ndnp/guidelines/archive/TIFFSpecs.pdf">TIFF profile</a>.
+
+			<br><br>Also used by HD Photo.<br><br>Usage rule in JHOVE <a href="http://hul.harvard.edu/jhove/tiff-hul.html">TIFF module</a>.<br><br>Mandatory for TIFF/EP.</td>
+
+        </tr>
+
+              <tr><td>315</td><td>013B</td><td nowrap="nowrap"><a href="http://www.awaresystems.be/imaging/tiff/tifftags/artist.html">Artist</a></td><td>Person who created the image.</td><td>Baseline</td>
+
+          <td>Listed in <a href="https://memory.loc.gov/ammem/about/standardsTable4.pdf"><em>LoC Baseline Tags</em></a>. Document states "Insitution name followed (if applicable) by ";" and name of scanning contractor.<br><br>Req'd in LC RFP97-6 <a href="https://memory.loc.gov/ammem/prpsal9/rfp9c.html#G">Section 
+
+            C.4.7</a>. "Library of Congress."<br><br>Req'd in LC NDNP <a href="https://www.loc.gov/ndnp/guidelines/archive/TIFFSpecs.pdf">TIFF profile</a>.  Provide "institution name; scanning contractor."<br><br>
+
+			Also used by HD Photo</td>
+
+        </tr>
+
+              <tr><td>316</td><td>013C</td><td nowrap="nowrap"><a href="http://www.awaresystems.be/imaging/tiff/tifftags/hostcomputer.html">HostComputer</a></td><td>The computer and/or operating system in use at the time of image creation.</td><td>Baseline</td>
+
+          <td>Also used by HD Photo</td>
+
+        </tr>
+
+              <tr><td>317</td><td>013D</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/predictor.html">Predictor</a></td><td>A mathematical operator that is applied to the image data before an encoding scheme is applied.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>318</td><td>013E</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/whitepoint.html">WhitePoint</a></td><td>The chromaticity of the white point of the image.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>319</td><td>013F</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/primarychromaticities.html">PrimaryChromaticities</a></td><td>The chromaticities of the primaries of the image.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>320</td><td>0140</td><td nowrap="nowrap"><a href="http://www.awaresystems.be/imaging/tiff/tifftags/colormap.html">ColorMap</a></td><td>A color map for palette color images.</td><td>Baseline</td><td>Mandatory for TIFF 6.0 class P.<a href="https://www.loc.gov/preservation/digital/formats/content/tiff_tags.shtml#1"><sup>1</sup></a> </td></tr>
+
+              <tr><td>321</td><td>0141</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/halftonehints.html">HalftoneHints</a></td><td>Conveys to the halftone function the range of gray levels within a colorimetrically-specified image that should retain tonal detail.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>322</td><td>0142</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/tilewidth.html">TileWidth</a></td><td>The tile width in pixels. This is the number of columns in each tile.</td><td>Extended</td><td>Mandatory for TIFF 6.0 files that use tiles. (Files that use strips employ tags 273, 278, and 279.)<br><br>Mandatory in TIFF/EP for tiled images.</td></tr>
+
+              <tr><td>323</td><td>0143</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/tilelength.html">TileLength</a></td><td>The tile length (height) in pixels. This is the number of rows in each tile.</td><td>Extended</td><td>Referenced in JHOVE <a href="http://hul.harvard.edu/jhove/tiff-hul.html">TIFF module</a> for files that use tiles. (Files that use strips employ tags 273, 278, and 279.)<br><br>Mandatory in TIFF/EP for tiled images.</td></tr>
+
+              <tr><td>324</td><td>0144</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/tileoffsets.html">TileOffsets</a></td><td>For each tile, the byte offset of that tile, as compressed and stored on disk.</td><td>Extended</td><td>Mandatory for TIFF 6.0 files that use tiles. (Files that use strips employ tags 273, 278, and 279.)<br><br>Mandatory in TIFF/EP for tiled images.</td></tr>
+
+              <tr><td>325</td><td>0145</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/tilebytecounts.html">TileByteCounts</a></td><td>For each tile, the number of (compressed) bytes in that tile.</td><td>Extended</td><td>Mandatory for TIFF 6.0 files that use tiles. (Files that use strips employ tags 273, 278, and 279.)<br><br>Mandatory in TIFF/EP for tiled images.</td></tr>
+
+              <tr><td>326</td><td>0146</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/badfaxlines.html">BadFaxLines</a></td><td>Used in the TIFF-F standard, denotes the number of 'bad' scan lines encountered by the facsimile device.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>327</td><td>0147</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/cleanfaxdata.html">CleanFaxData</a></td><td>Used in the TIFF-F standard, indicates if 'bad' lines encountered during reception are stored in the data, or if 'bad' lines have been replaced by the receiver.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>328</td><td>0148</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/consecutivebadfaxlines.html">ConsecutiveBadFaxLines</a></td><td>Used in the TIFF-F standard, denotes the maximum number of consecutive 'bad' scanlines received.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>330</td><td>014A</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/subifds.html">SubIFDs</a></td><td>Offset to child IFDs.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>332</td><td>014C</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/inkset.html">InkSet</a></td><td>The set of inks used in a separated (PhotometricInterpretation=5) image.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>333</td><td>014D</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/inknames.html">InkNames</a></td><td>The name of each ink used in a separated image.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>334</td><td>014E</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/numberofinks.html">NumberOfInks</a></td><td>The number of inks.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>336</td><td>0150</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/dotrange.html">DotRange</a></td><td>The component values that correspond to a 0% dot and 100% dot.</td><td>Extended</td><td>Usage rule in JHOVE <a href="http://hul.harvard.edu/jhove/tiff-hul.html">TIFF module</a>.</td></tr>
+
+              <tr><td>337</td><td>0151</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/targetprinter.html">TargetPrinter</a></td><td>A description of the printing environment for which this separation is intended.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>338</td><td>0152</td><td nowrap="nowrap"><a href="http://www.awaresystems.be/imaging/tiff/tifftags/extrasamples.html">ExtraSamples</a></td><td>Description of extra components.</td><td>Baseline</td><td>&nbsp;</td></tr>
+
+              <tr><td>339</td><td>0153</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/sampleformat.html">SampleFormat</a></td><td>Specifies how to interpret each data sample in a pixel.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>340</td><td>0154</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/sminsamplevalue.html">SMinSampleValue</a></td><td>Specifies the minimum sample value.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>341</td><td>0155</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/smaxsamplevalue.html">SMaxSampleValue</a></td><td>Specifies the maximum sample value.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>342</td><td>0156</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/transferrange.html">TransferRange</a></td><td>Expands the range of the TransferFunction.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>343</td><td>0157</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/clippath.html">ClipPath</a></td><td>Mirrors the essentials of PostScript's path creation functionality.</td><td>Extended</td><td>Usage rule in JHOVE <a href="http://hul.harvard.edu/jhove/tiff-hul.html">TIFF module</a>.</td></tr>
+
+              <tr><td>344</td><td>0158</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/xclippathunits.html">XClipPathUnits</a></td><td>The number of units that span the width of the image, in terms of integer ClipPath coordinates.</td><td>Extended</td><td>Usage rule in JHOVE <a href="http://hul.harvard.edu/jhove/tiff-hul.html">TIFF module</a>.</td></tr>
+
+              <tr><td>345</td><td>0159</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/yclippathunits.html">YClipPathUnits</a></td><td>The number of units that span the height of the image, in terms of integer ClipPath coordinates.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>346</td><td>015A</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/indexed.html">Indexed</a></td><td>Aims to broaden the support for indexed images to include support for any color space.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>347</td><td>015B</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/jpegtables.html">JPEGTables</a></td><td>JPEG quantization and/or Huffman tables.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>351</td><td>015F</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/opiproxy.html">OPIProxy</a></td><td>OPI-related.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>400</td><td>0190</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/globalparametersifd.html">GlobalParametersIFD</a></td><td>Used in the TIFF-FX standard to point to an IFD containing tags that are globally applicable to the complete TIFF file.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>401</td><td>0191</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/profiletype.html">ProfileType</a></td><td>Used in the TIFF-FX standard, denotes the type of data stored in this file or IFD.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>402</td><td>0192</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/faxprofile.html">FaxProfile</a></td><td>Used in the TIFF-FX standard, denotes the 'profile' that applies to this file.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>403</td><td>0193</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/codingmethods.html">CodingMethods</a></td><td>Used in the TIFF-FX standard, indicates which coding methods are used in the file.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>404</td><td>0194</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/versionyear.html">VersionYear</a></td><td>Used in the TIFF-FX standard, denotes the year of the standard specified by the FaxProfile field.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>405</td><td>0195</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/modenumber.html">ModeNumber</a></td><td>Used in the TIFF-FX standard, denotes the mode of the standard specified by the FaxProfile field.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>433</td><td>01B1</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/decode.html">Decode</a></td><td>Used in the TIFF-F and TIFF-FX standards, holds information about the ITULAB (PhotometricInterpretation = 10) encoding.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>434</td><td>01B2</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/defaultimagecolor.html">DefaultImageColor</a></td><td>Defined in the Mixed Raster Content part of RFC 2301, is the default color needed in areas where no image is available.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>512</td><td>0200</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/jpegproc.html">JPEGProc</a></td><td>Old-style JPEG compression field. TechNote2 invalidates this part of the specification.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>513</td><td>0201</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/jpeginterchangeformat.html">JPEGInterchangeFormat</a></td><td>Old-style JPEG compression field. TechNote2 invalidates this part of the specification.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>514</td><td>0202</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/jpeginterchangeformatlength.html">JPEGInterchangeFormatLength</a></td><td>Old-style JPEG compression field. TechNote2 invalidates this part of the specification.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>515</td><td>0203</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/jpegrestartinterval.html">JPEGRestartInterval</a></td><td>Old-style JPEG compression field. TechNote2 invalidates this part of the specification.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>517</td><td>0205</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/jpeglosslesspredictors.html">JPEGLosslessPredictors</a></td><td>Old-style JPEG compression field. TechNote2 invalidates this part of the specification.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>518</td><td>0206</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/jpegpointtransforms.html">JPEGPointTransforms</a></td><td>Old-style JPEG compression field. TechNote2 invalidates this part of the specification.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>519</td><td>0207</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/jpegqtables.html">JPEGQTables</a></td><td>Old-style JPEG compression field. TechNote2 invalidates this part of the specification.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>520</td><td>0208</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/jpegdctables.html">JPEGDCTables</a></td><td>Old-style JPEG compression field. TechNote2 invalidates this part of the specification.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>521</td><td>0209</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/jpegactables.html">JPEGACTables</a></td><td>Old-style JPEG compression field. TechNote2 invalidates this part of the specification.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>529</td><td>0211</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/ycbcrcoefficients.html">YCbCrCoefficients</a></td><td>The transformation from RGB to YCbCr image data.</td><td>Extended</td><td>Mandatory for TIFF/EP YCbCr images.</td></tr>
+
+              <tr><td>530</td><td>0212</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/ycbcrsubsampling.html">YCbCrSubSampling</a></td><td>Specifies the subsampling factors used for the chrominance components of a YCbCr image.</td><td>Extended</td><td>Mandatory for TIFF/EP YCbCr images.</td></tr>
+
+              <tr><td>531</td><td>0213</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/ycbcrpositioning.html">YCbCrPositioning</a></td><td>Specifies the positioning of subsampled chrominance components relative to luminance samples.</td><td>Extended</td><td>Mandatory for TIFF/EP YCbCr images.</td></tr>
+
+              <tr><td>532</td><td>0214</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/referenceblackwhite.html">ReferenceBlackWhite</a></td><td>Specifies a pair of headroom and footroom image data values (codes) for each pixel component.</td><td>Extended</td><td>Mandatory for TIFF 6.0 class Y.<a href="https://www.loc.gov/preservation/digital/formats/content/tiff_tags.shtml#1"><sup>1</sup></a><br><br>Mandatory for TIFF/EP YCbCr images.</td></tr>
+
+              <tr><td>559</td><td>022F</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/striprowcounts.html">StripRowCounts</a></td><td>Defined in the Mixed Raster Content part of RFC 2301, used to replace RowsPerStrip for IFDs with variable-sized strips.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>700</td><td>02BC</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/xmp.html">XMP</a></td><td>XML packet containing XMP metadata</td><td>Extended</td>
+
+          <td>Also used by HD Photo</td>
+
+        </tr>
+
+              <tr><td>18246</td><td>4746</td><td nowrap="">Image.Rating</td><td>Ratings tag used by Windows</td><td>Exif private IFD</td>
+
+          <td>&nbsp;</td>
+
+        </tr>
+              <tr><td>18249</td>
+              <td>4749</td>
+              <td nowrap="">Image.RatingPercent</td><td>Ratings tag used by Windows, value as percent</td><td>Exif private IFD</td>
+
+          <td>&nbsp;</td>
+
+        </tr>
+              <tr><td>32781</td><td>800D</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/imageid.html">ImageID</a></td><td>OPI-related.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+			  <tr><td>32932</td><td>80A4</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/wangannotation.html">Wang Annotation</a></td><td>Annotation data, as used in 'Imaging for Windows'.</td><td>Private</td><td>&nbsp;</td></tr>
+
+              <tr><td>33421</td><td>828D</td><td nowrap="">CFARepeatPatternDim</td><td>For camera raw files from sensors with CFA overlay.</td>
+
+          <td><p>TIFF/EP spec, p. 23</p>
+            <p>Exif private IFD</p></td>
+
+          <td>Mandatory in TIFF/EP for CFA files.</td></tr>
+
+              <tr><td>33422</td><td>828E</td><td nowrap="">CFAPattern</td><td>For camera raw files from sensors with CFA overlay.</td>
+
+          <td><p>TIFF/EP spec, p. 23</p>
+            <p>Exif private IFD</p></td>
+
+          <td>Mandatory in TIFF/EP for CFA files.</td></tr>
+
+              <tr><td>33423</td><td>828F</td><td nowrap="">BatteryLevel</td><td>Encodes camera battery level at time of image capture.</td>
+
+          <td><p>TIFF/EP spec, p. 45</p>
+            <p>Exif private IFD</p></td>
+
+          <td>&nbsp;</td></tr>
+
+              <tr><td>33432</td><td>8298</td><td nowrap="nowrap"><a href="http://www.awaresystems.be/imaging/tiff/tifftags/copyright.html">Copyright</a></td><td>Copyright notice.</td><td>Baseline</td>
+
+          <td>Also used by HD Photo.<br><br>Mandatory for TIFF/EP</td>
+
+        </tr>
+
+			                <tr><td>33434</td><td>829A</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/exposuretime.html">ExposureTime</a></td><td>Exposure time, given in seconds.</td><td>Exif Private IFD<br><br>
+
+            TIFF/EP spec, p. 38</td>
+
+          <td>&nbsp;</td></tr>
+
+              <tr><td>33437</td><td>829D</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/fnumber.html">FNumber</a></td><td>The F number.</td><td>Exif Private IFD<br><br>
+
+            TIFF/EP spec, p. 39</td>
+
+          <td>&nbsp;</td></tr>
+
+              <tr><td>33445</td><td>82A5</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/mdfiletag.html">MD FileTag</a></td><td>Specifies the pixel data format encoding in the Molecular Dynamics GEL file format.</td><td>Private</td><td>&nbsp;</td></tr>
+
+              <tr><td>33446</td><td>82A6</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/mdscalepixel.html">MD ScalePixel</a></td><td>Specifies a scale factor in the Molecular Dynamics GEL file format.</td><td>Private</td><td>&nbsp;</td></tr>
+
+              <tr><td>33447</td><td>82A7</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/mdcolortable.html">MD ColorTable</a></td><td>Used to specify the conversion from 16bit to 8bit in the Molecular Dynamics GEL file format.</td><td>Private</td><td>&nbsp;</td></tr>
+
+              <tr><td>33448</td><td>82A8</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/mdlabname.html">MD LabName</a></td><td>Name of the lab that scanned this file, as used in the Molecular Dynamics GEL file format.</td><td>Private</td><td>&nbsp;</td></tr>
+
+              <tr><td>33449</td><td>82A9</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/mdsampleinfo.html">MD SampleInfo</a></td><td>Information about the sample, as used in the Molecular Dynamics GEL file format.</td><td>Private</td><td>&nbsp;</td></tr>
+
+              <tr><td>33450</td><td>82AA</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/mdprepdate.html">MD PrepDate</a></td><td>Date the sample was prepared, as used in the Molecular Dynamics GEL file format.</td><td>Private</td><td>&nbsp;</td></tr>
+
+              <tr><td>33451</td><td>82AB</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/mdpreptime.html">MD PrepTime</a></td><td>Time the sample was prepared, as used in the Molecular Dynamics GEL file format.</td><td>Private</td><td>&nbsp;</td></tr>
+
+              <tr><td>33452</td><td>82AC</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/mdfileunits.html">MD FileUnits</a></td><td>Units for data in this file, as used in the Molecular Dynamics GEL file format.</td><td>Private</td><td>&nbsp;</td></tr>
+
+              <tr><td>33550</td><td>830E</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/modelpixelscaletag.html">ModelPixelScaleTag</a></td><td>Used in interchangeable <a href="https://www.loc.gov/preservation/digital/formats/fdd/fdd000279.shtml">GeoTIFF_1_0</a> files.</td><td>Private</td><td>&nbsp;</td></tr>
+
+              <tr><td>33723</td><td>83BB</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/iptc.html">IPTC/NAA</a></td><td>IPTC-NAA (International Press Telecommunications Council-Newspaper Association of America) metadata.</td>
+
+          <td>TIFF/EP spec, p. 33</td>
+
+          <td>Tag name and values defined by IPTC-NAA Info Interchange Model &amp; Digital Newsphoto Parameter Record.<br><br>
+
+            Called <em>IPTS</em> at AWare Web site.</td>
+
+        </tr>
+
+              <tr><td>33918</td><td>847E</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/ingrpacketdatatag.html">INGR Packet Data Tag</a></td><td>Intergraph Application specific storage.</td><td>Private</td><td>&nbsp;</td></tr>
+
+              <tr><td>33919</td><td>847F</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/ingrflagregisters.html">INGR Flag Registers</a></td><td>Intergraph Application specific flags.</td><td>Private</td><td>&nbsp;</td></tr>
+
+              <tr><td>33920</td><td>8480</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/irasbtransformationmatrix.html">IrasB Transformation Matrix</a></td><td>Originally part of Intergraph's GeoTIFF tags, but likely understood by IrasB only.</td><td>Private</td><td>&nbsp;</td></tr>
+
+              <tr><td>33922</td><td>8482</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/modeltiepointtag.html">ModelTiepointTag</a></td><td>Originally part of Intergraph's GeoTIFF tags, but now used in interchangeable <a href="https://www.loc.gov/preservation/digital/formats/fdd/fdd000279.shtml">GeoTIFF_1_0</a> files.</td><td>Private</td>
+
+          <td>In <a href="https://www.loc.gov/preservation/digital/formats/fdd/fdd000279.shtml">GeoTIFF_1_0</a>, either this tag or 34264 must be defined, but not both</td>
+
+        </tr>
+
+
+
+			  <tr><td>34016</td><td>&nbsp;</td><td nowrap="">Site</td><td>Site where image created.</td>
+
+          <td>TIFF/IT spec, 7.2.3</td>
+
+          <td>&nbsp;</td></tr>
+
+			  <tr><td>34017</td><td>&nbsp;</td><td nowrap="">ColorSequence</td><td>Sequence of colors if other than CMYK.</td>
+
+          <td>TIFF/IT spec, 7.2.8.3.2</td>
+
+          <td>For BP and BL only<a href="https://www.loc.gov/preservation/digital/formats/content/tiff_tags.shtml#2"><sup>2</sup></a></td></tr>
+
+			  <tr><td>34018</td><td>&nbsp;</td><td nowrap="">IT8Header</td><td>Certain inherited headers.</td>
+
+          <td>TIFF/IT spec, 7.2.3</td>
+
+          <td>Obsolete</td></tr>
+
+			  <tr><td>34019</td><td>&nbsp;</td><td nowrap="">RasterPadding</td><td>Type of raster padding used, if any.</td>
+
+          <td>TIFF/IT spec, 7.2.6</td>
+
+          <td>&nbsp;</td></tr>
+
+			  <tr><td>34020</td><td>&nbsp;</td><td nowrap="">BitsPerRunLength</td><td>Number of bits for short run length encoding.</td>
+
+          <td>TIFF/IT spec, 7.2.6</td>
+
+          <td>For LW only<a href="https://www.loc.gov/preservation/digital/formats/content/tiff_tags.shtml#2"><sup>2</sup></a></td></tr>
+
+			  <tr><td>34021</td><td>&nbsp;</td><td nowrap="">BitsPerExtendedRunLength</td><td>Number of bits for long run length encoding.</td>
+
+          <td>TIFF/IT spec, 7.2.6</td>
+
+          <td>For LW only<a href="https://www.loc.gov/preservation/digital/formats/content/tiff_tags.shtml#2"><sup>2</sup></a></td></tr>
+
+			  <tr><td>34022</td><td>&nbsp;</td><td nowrap="">ColorTable</td><td>Color value in a color pallette.</td>
+
+          <td>TIFF/IT spec, 7.2.8.4</td>
+
+          <td>For BP and BL only<a href="https://www.loc.gov/preservation/digital/formats/content/tiff_tags.shtml#2"><sup>2</sup></a></td></tr>			  
+
+			  <tr><td>34023</td><td>&nbsp;</td><td nowrap="">ImageColorIndicator</td><td>Indicates if image (foreground) color or transparency is specified.</td>
+
+          <td>TIFF/IT spec, 7.2.9</td>
+
+          <td>For MP, BP, and BL only<a href="https://www.loc.gov/preservation/digital/formats/content/tiff_tags.shtml#2"><sup>2</sup></a></td></tr>
+
+              <tr><td>34024</td><td>&nbsp;</td><td nowrap="">BackgroundColorIndicator</td><td>Background color specification.</td>
+
+          <td>TIFF/IT spec, 7.2.9</td>
+
+          <td>For BP and BL only<a href="https://www.loc.gov/preservation/digital/formats/content/tiff_tags.shtml#2"><sup>2</sup></a></td></tr>
+
+			  <tr><td>34025</td><td>&nbsp;</td><td nowrap="">ImageColorValue</td><td>Specifies image (foreground) color.</td>
+
+          <td>TIFF/IT spec, 7.2.8.4</td>
+
+          <td>For MP, BP, and BL only<a href="https://www.loc.gov/preservation/digital/formats/content/tiff_tags.shtml#2"><sup>2</sup></a></td></tr>
+
+			  <tr><td>34026</td><td>&nbsp;</td><td nowrap="">BackgroundColorValue</td><td>Specifies background color.</td>
+
+          <td>TIFF/IT spec, 7.2.8.4</td>
+
+          <td>For BP and BL only<a href="https://www.loc.gov/preservation/digital/formats/content/tiff_tags.shtml#2"><sup>2</sup></a></td></tr>
+
+			  <tr><td>34027</td><td>&nbsp;</td><td nowrap="">PixelIntensityRange</td><td>Specifies data values for 0 percent and 100 percent pixel intensity.</td>
+
+          <td>TIFF/IT spec, 7.2.8.4</td>
+
+          <td>For MP only<a href="https://www.loc.gov/preservation/digital/formats/content/tiff_tags.shtml#2"><sup>2</sup></a></td></tr>			  
+
+			  <tr><td>34028</td><td>&nbsp;</td><td nowrap="">TransparencyIndicator</td><td>Specifies if transparency is used in HC file.</td>
+
+          <td>TIFF/IT spec, 7.2.8.4</td>
+
+          <td>For HC only<a href="https://www.loc.gov/preservation/digital/formats/content/tiff_tags.shtml#2"><sup>2</sup></a></td></tr>			  
+
+			  <tr><td>34029</td><td>&nbsp;</td><td nowrap="">ColorCharacterization</td><td>Specifies ASCII table or other reference per ISO 12641 and ISO 12642.</td>
+
+          <td>TIFF/IT spec, 7.2.8.4</td>
+
+          <td>&nbsp;</td></tr>
+
+              <tr><td>34030</td><td>&nbsp;</td><td nowrap="">HCUsage</td><td>Indicates the type of information in an HC file.</td>
+
+          <td>TIFF/IT spec, 7.2.6</td>
+
+          <td>For HC only<a href="https://www.loc.gov/preservation/digital/formats/content/tiff_tags.shtml#2"><sup>2</sup></a></td></tr>
+
+			  <tr><td>34031</td><td>&nbsp;</td><td nowrap="">TrapIndicator</td><td>Indicates whether or not trapping has been applied to the file.</td>
+
+          <td>TIFF/IT spec, 7.2.6</td>
+
+          <td>&nbsp;</td></tr>
+
+			  <tr><td>34032</td><td>&nbsp;</td><td nowrap="">CMYKEquivalent</td><td>Specifies CMYK equivalent for specific separations.</td>
+
+          <td>TIFF/IT spec, 7.2.8.3.4</td>
+
+          <td>&nbsp;</td></tr>
+
+			  <tr><td>34033</td><td>&nbsp;</td><td nowrap="">Reserved</td><td>For future TIFF/IT use</td><td>TIFF/IT spec</td><td>&nbsp;</td></tr>			  
+
+			  <tr><td>34034</td><td>&nbsp;</td><td nowrap="">Reserved</td><td>For future TIFF/IT use</td><td>TIFF/IT spec</td><td>&nbsp;</td></tr>			  
+
+			  <tr><td>34035</td><td>&nbsp;</td><td nowrap="">Reserved</td><td>For future TIFF/IT use</td><td>TIFF/IT spec</td><td>&nbsp;</td></tr>			  
+
+			  <tr><td>34264</td><td>85D8</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/modeltransformationtag.html">ModelTransformationTag</a></td><td>Used in interchangeable <a href="https://www.loc.gov/preservation/digital/formats/fdd/fdd000279.shtml">GeoTIFF_1_0</a> files.</td><td>Private</td>
+
+          <td>In <a href="https://www.loc.gov/preservation/digital/formats/fdd/fdd000279.shtml">GeoTIFF_1_0</a>, either this tag or 33922 must be defined, but not both</td>
+
+        </tr>
+
+              <tr><td>34377</td><td>8649</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/photoshop.html">Photoshop</a></td><td>Collection of Photoshop 'Image Resource Blocks'.</td><td>Private</td><td>&nbsp;</td></tr>
+
+              <tr><td>34665</td><td>8769</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/exififd.html">Exif IFD</a></td><td>A pointer to the Exif IFD.</td><td>Private</td>
+
+          <td>Also used by HD Photo.<br><br>For Exif, mandatory in primary TIFF IFD, if present.</td>
+
+        </tr>
+
+              <tr><td>34675</td><td>8773</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/iccprofile.html">InterColorProfile</a></td><td>ICC profile data.</td>
+
+          <td><p>TIFF/EP spec, p. 47</p>
+            <p>Exif private IFD</p></td>
+
+          <td>Also called <em>ICC Profile</em>.<br><br>Also used by HD Photo</td>
+
+        </tr>
+
+              <tr><td>34732</td><td>87AC</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/imagelayer.html">ImageLayer</a></td><td>Defined in the Mixed Raster Content part of RFC 2301, used to denote the particular function of this Image in the mixed raster scheme.</td><td>Extended</td><td>&nbsp;</td></tr>
+
+              <tr><td>34735</td><td>87AF</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/geokeydirectorytag.html">GeoKeyDirectoryTag</a></td><td>Used in interchangeable <a href="https://www.loc.gov/preservation/digital/formats/fdd/fdd000279.shtml">GeoTIFF_1_0</a> files.</td><td>Private</td>
+
+          <td>Mandatory in <a href="https://www.loc.gov/preservation/digital/formats/fdd/fdd000279.shtml">GeoTIFF_1_0</a></td>
+
+        </tr>
+
+              <tr><td>34736</td><td>87B0</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/geodoubleparamstag.html">GeoDoubleParamsTag</a></td><td>Used in interchangeable <a href="https://www.loc.gov/preservation/digital/formats/fdd/fdd000279.shtml">GeoTIFF_1_0</a> files.</td><td>Private</td><td>&nbsp;</td></tr>
+
+              <tr><td>34737</td><td>87B1</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/geoasciiparamstag.html">GeoAsciiParamsTag</a></td><td>Used in interchangeable <a href="https://www.loc.gov/preservation/digital/formats/fdd/fdd000279.shtml">GeoTIFF_1_0</a> files.</td><td>Private</td><td>&nbsp;</td></tr>
+
+			                <tr><td>34850</td><td>8822</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/exposureprogram.html">ExposureProgram</a></td><td>The class of the program used by the camera to set exposure when the picture is taken.</td><td>Exif Private IFD<br><br>
+
+            TIFF/EP spec, p. 41</td>
+
+          <td>&nbsp;</td></tr>
+
+              <tr><td>34852</td><td>8824</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/spectralsensitivity.html">SpectralSensitivity</a></td><td>Indicates the spectral sensitivity of each channel of the camera used.</td><td>Exif Private IFD<br><br>
+
+            TIFF/EP spec, p. 48</td>
+
+          <td>&nbsp;</td></tr>
+
+              <tr><td>34853</td><td>8825</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/gpsifd.html">GPSInfo</a></td><td>A pointer to the Exif-related GPS Info IFD.</td>
+
+          <td><p>TIFF/EP spec, p. 34</p>
+            <p>Exif private IFD</p></td>
+
+          <td>Also called <em>GPS IFD</em>.</td>
+
+        </tr>
+
+			                <tr><td>34855</td><td>8827</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/isospeedratings.html">ISOSpeedRatings</a></td><td>Indicates the ISO Speed and ISO Latitude of the camera or input device as specified in ISO 12232.</td><td>Exif Private IFD<br><br>
+
+            TIFF/EP spec, p. 47</td>
+
+          <td>&nbsp;</td></tr>
+
+              <tr><td>34856</td><td>8828</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/oecf.html">OECF</a></td><td>Indicates the Opto-Electric Conversion Function (OECF) specified in ISO 14524.</td><td>Exif Private IFD<br><br>
+
+            TIFF/EP spec, p. 48</td>
+
+          <td>&nbsp;</td></tr>
+
+              <tr><td>34857</td><td>8829</td><td nowrap="">Interlace</td><td>Indicates the field number of multifield images.</td>
+
+          <td><p>TIFF/EP spec, p. 22</p>
+            <p>Exif private IFD</p></td>
+
+          <td>&nbsp;</td></tr>
+
+              <tr><td>34858</td><td>882A</td><td nowrap="">TimeZoneOffset</td><td>Encodes time zone of camera clock relative to GMT.</td>
+
+          <td><p>TIFF/EP spec, p. 38</p>
+            <p>Exif private IFD</p></td>
+
+          <td>&nbsp;</td></tr>
+
+              <tr><td>34859</td><td>882B</td><td nowrap="">SelfTimeMode</td><td>Number of seconds image capture was delayed from button press.</td>
+
+          <td><p>TIFF/EP spec, p. 45</p>
+            <p>Exif private IFD</p></td>
+
+          <td>&nbsp;</td></tr>
+
+              <tr><td>34864</td><td>8830</td><td nowrap="">SensitivityType</td><td>The SensitivityType tag indicates PhotographicSensitivity tag, which one of the parameters of ISO 12232. Although it is an optional tag, it should be recorded when a PhotographicSensitivity tag is recorded. Value = 4, 5, 6, or 7 may be used in case that the values of plural parameters are the same.</td><td>Exif private IFD</td>
+          <td>&nbsp;</td>
+        </tr>
+
+              <tr><td>34865</td><td>8831</td><td nowrap="">StandardOutputSensitivity</td><td>This tag indicates the standard output sensitivity value of a camera or input device defined in ISO 12232. When recording this tag, the PhotographicSensitivity and SensitivityType tags shall also be recorded.</td><td>Exif private IFD</td>
+          <td>&nbsp;</td>
+        </tr>
+
+              <tr><td>34866</td><td>8832</td><td nowrap="">RecommendedExposureIndex</td><td>This tag indicates the recommended exposure index value of a camera or input device defined in ISO 12232. When recording this tag, the PhotographicSensitivity and SensitivityType tags shall also be recorded.</td><td>Exif private IFD</td>
+          <td>&nbsp;</td>
+        </tr>
+
+              <tr><td>34867</td><td>8833</td><td nowrap="">ISOSpeed</td><td>This tag indicates the ISO speed value of a camera or input device that is defined in ISO 12232. When recording this tag, the PhotographicSensitivity and SensitivityType tags shall also be recorded.</td><td>Exif private IFD</td>
+          <td>&nbsp;</td>
+        </tr>
+              <tr><td>34868</td><td>8834</td><td nowrap="">ISOSpeedLatitudeyyy</td><td>This tag indicates the ISO speed latitude yyy value of a camera or input device that is defined in ISO 12232. However, this tag shall not be recorded without ISOSpeed and ISOSpeedLatitudezzz.</td><td>Exif private IFD</td>
+          <td>&nbsp;</td>
+        </tr>
+              <tr><td>34869</td><td>8835</td><td nowrap="">ISOSpeedLatitudezzz</td><td>This tag indicates the ISO speed latitude zzz value of a camera or input device that is defined in ISO 12232. However, this tag shall not be recorded without ISOSpeed and ISOSpeedLatitudeyyy.</td><td>Exif private IFD</td>
+          <td>&nbsp;</td>
+        </tr>
+
+			  <tr><td>34908</td><td>885C</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/hylafaxfaxrecvparams.html">HylaFAX FaxRecvParams</a></td><td>Used by HylaFAX.</td><td>Private</td><td>&nbsp;</td></tr>
+
+              <tr><td>34909</td><td>885D</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/hylafaxfaxsubaddress.html">HylaFAX FaxSubAddress</a></td><td>Used by HylaFAX.</td><td>Private</td><td>&nbsp;</td></tr>
+
+              <tr><td>34910</td><td>885E</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/hylafaxfaxrecvtime.html">HylaFAX FaxRecvTime</a></td><td>Used by HylaFAX.</td><td>Private</td><td>&nbsp;</td></tr>
+
+			                <tr><td>36864</td><td>9000</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/exifversion.html">ExifVersion</a></td><td>The version of the supported Exif standard.</td><td>Exif Private IFD</td>
+
+          <td>Mandatory in the Exif IFD.</td>
+
+        </tr>
+
+              <tr><td>36867</td><td>9003</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/datetimeoriginal.html">DateTimeOriginal</a></td><td>The date and time when the original image data was generated.</td><td>Exif Private IFD<br><br>
+
+            TIFF/EP spec, p. 37</td>
+
+          <td>Mandatory for TIFF/EP.</td></tr>
+
+              <tr><td>36868</td><td>9004</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/datetimedigitized.html">DateTimeDigitized</a></td><td>The date and time when the image was stored as digital data.</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+
+              <tr><td>37121</td><td>9101</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/componentsconfiguration.html">ComponentsConfiguration</a></td><td>Specific to compressed data; specifies the channels and complements PhotometricInterpretation</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+
+              <tr><td>37122</td><td>9102</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/compressedbitsperpixel.html">CompressedBitsPerPixel</a></td><td>Specific to compressed data; states the compressed bits per pixel.</td><td>Exif Private IFD<br><br>
+
+            TIFF/EP spec, p. 27</td>
+
+          <td>&nbsp;</td></tr>
+
+              <tr><td>37377</td><td>9201</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/shutterspeedvalue.html">ShutterSpeedValue</a></td><td>Shutter speed.</td><td>Exif Private IFD<br><br>
+
+            TIFF/EP spec, p. 39</td>
+
+          <td>&nbsp;</td></tr>
+
+              <tr><td>37378</td><td>9202</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/aperturevalue.html">ApertureValue</a></td><td>The lens aperture.</td><td>Exif Private IFD<br><br>
+
+            TIFF/EP spec, p. 39</td>
+
+          <td>&nbsp;</td></tr>
+
+              <tr><td>37379</td><td>9203</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/brightnessvalue.html">BrightnessValue</a></td><td>The value of brightness.</td><td>Exif Private IFD<br><br>
+
+            TIFF/EP spec, p. 40</td>
+
+          <td>&nbsp;</td></tr>
+
+              <tr><td>37380</td><td>9204</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/exposurebiasvalue.html">ExposureBiasValue</a></td><td>The exposure bias.</td><td>Exif Private IFD<br><br>
+
+            TIFF/EP spec, p. 40</td>
+
+          <td>&nbsp;</td></tr>
+
+              <tr><td>37381</td><td>9205</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/maxaperturevalue.html">MaxApertureValue</a></td><td>The smallest F number of the lens.</td><td>Exif Private IFD<br><br>
+
+            TIFF/EP spec, p. 40</td>
+
+          <td>&nbsp;</td></tr>
+
+              <tr><td>37382</td><td>9206</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/subjectdistance.html">SubjectDistance</a></td><td>The distance to the subject, given in meters.</td><td>Exif Private IFD<br><br>
+
+            TIFF/EP spec, p. 44</td>
+
+          <td>&nbsp;</td></tr>
+
+              <tr><td>37383</td><td>9207</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/meteringmode.html">MeteringMode</a></td><td>The metering mode.</td><td>Exif Private IFD<br><br>
+
+            TIFF/EP spec, p. 41</td>
+
+          <td>&nbsp;</td></tr>
+
+              <tr><td>37384</td><td>9208</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/lightsource.html">LightSource</a></td><td>The kind of light source.</td><td>Exif Private IFD<br><br>
+
+            TIFF/EP spec, p. 46</td>
+
+          <td>&nbsp;</td></tr>
+
+              <tr><td>37385</td><td>9209</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/flash.html">Flash</a></td><td>Indicates the status of flash when the image was shot.</td><td>Exif Private IFD<br><br>
+
+            TIFF/EP spec, p. 42</td>
+
+          <td>&nbsp;</td></tr>
+
+              <tr><td>37386</td><td>920A</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/focallength.html">FocalLength</a></td><td>The actual focal length of the lens, in mm.</td><td>Exif Private IFD<br><br>
+
+            TIFF/EP spec, p. 44</td>
+
+          <td>&nbsp;</td></tr>
+
+		       <tr><td>37387</td><td>920B</td><td nowrap="">FlashEnergy</td><td>Amount of flash energy (BCPS).</td>
+
+          <td><p>TIFF/EP spec, p. 43</p>
+            <p>Exif Private IFD</p></td>
+
+          <td>&nbsp;</td></tr>
+
+              <tr><td>37388</td><td>920C</td><td nowrap="">SpatialFrequencyResponse</td><td>SFR of the camera.</td>
+
+          <td><p>TIFF/EP spec, p. 49</p>
+            <p>Exif Private IFD</p></td>
+
+          <td>&nbsp;</td></tr>
+
+			  <tr><td>37389</td><td>920D</td><td nowrap="">Noise</td><td>Noise measurement values.</td>
+
+          <td><p>TIFF/EP spec, p. 49</p>
+            <p>Exif Private IFD</p></td>
+
+          <td>&nbsp;</td></tr>
+
+			  <tr><td>37390</td><td>920E</td><td nowrap="">FocalPlaneXResolution</td><td>Number of pixels per FocalPlaneResolutionUnit (37392) in ImageWidth direction for main image.</td>
+
+          <td><p>TIFF/EP spec, p. 18</p>
+            <p>Exif Private IFD</p></td>
+
+          <td>&nbsp;</td></tr>
+
+			  <tr><td>37391</td><td>920F</td><td nowrap="">FocalPlaneYResolution</td><td>Number of pixels per FocalPlaneResolutionUnit (37392) in ImageLength direction for main image.</td>
+
+          <td><p>TIFF/EP spec, p. 19</p>
+            <p>Exif Private IFD</p></td>
+
+          <td>&nbsp;</td></tr>
+
+			  <tr><td>37392</td><td>9210</td><td nowrap="">FocalPlaneResolutionUnit</td><td>Unit of measurement for FocalPlaneXResolution(37390) and FocalPlaneYResolution(37391).</td>
+
+          <td><p>TIFF/EP spec, p. 19</p>
+            <p>Exif Private IFD</p></td>
+
+          <td>&nbsp;</td></tr>
+
+			  <tr><td>37393</td><td>9211</td><td nowrap="">ImageNumber</td><td>Number assigned to an image, e.g., in a chained image burst.</td>
+
+          <td><p>TIFF/EP spec, p. 32</p>
+            <p>Exif Private IFD</p></td>
+
+          <td>&nbsp;</td></tr>
+
+			  <tr><td>37394</td><td>9212</td><td nowrap="">SecurityClassification</td><td>Security classification assigned to the image.</td>
+
+          <td><p>TIFF/EP spec, p. 33</p>
+            <p>Exif Private IFD</p></td>
+
+          <td>&nbsp;</td></tr>
+
+			  <tr><td>37395</td><td>9213</td><td nowrap="">ImageHistory</td><td>Record of what has been done to the image.</td>
+
+          <td><p>TIFF/EP spec, p. 33</p>
+            <p>Exif Private IFD</p></td>
+
+          <td>&nbsp;</td></tr>
+
+              <tr><td>37396</td><td>9214</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/subjectarea.html">SubjectLocation</a></td><td>Indicates the location and area of the main subject in the overall scene.</td><td>Exif Private IFD<br><br>
+
+            TIFF/EP spec, p. 45</td>
+
+          <td>Called SubjectArea (from Exif spec) at AWare Web site</td></tr>
+
+              <tr><td>37397</td><td>9215</td><td nowrap="">ExposureIndex</td><td>Encodes the camera exposure index setting when image was captured.</td>
+
+          <td><p>TIFF/EP spec, p. 47</p>
+            <p>Exif Private IFD</p></td>
+
+          <td>&nbsp;</td></tr>
+
+<tr><td>37398</td><td>9216</td><td nowrap="">TIFF/EPStandardID</td><td>For current spec, tag value equals <em>1 0 0 0</em>.</td>
+
+          <td><p>TIFF/EP spec, p. 16</p>
+            <p>Exif Private IFD</p></td>
+
+          <td>Mandatory in TIFF/EP.</td></tr>
+
+<tr><td>37399</td><td>9217</td><td nowrap="">SensingMethod</td><td>Type of image sensor.</td>
+
+          <td><p>TIFF/EP spec, p. 22</p>
+            <p>Exif Private IFD</p></td>
+
+          <td>Mandatory in TIFF/EP.</td></tr>
+
+              <tr><td>37500</td><td>927C</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/makernote.html">MakerNote</a></td><td>Manufacturer specific information.</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+
+              <tr><td>37510</td><td>9286</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/usercomment.html">UserComment</a></td><td>Keywords or comments on the image; complements ImageDescription.</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+
+              <tr><td>37520</td><td>9290</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/subsectime.html">SubsecTime</a></td><td>A tag used to record fractions of seconds for the DateTime tag.</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+
+              <tr><td>37521</td><td>9291</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/subsectimeoriginal.html">SubsecTimeOriginal</a></td><td>A tag used to record fractions of seconds for the DateTimeOriginal tag.</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+
+              <tr><td>37522</td><td>9292</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/subsectimedigitized.html">SubsecTimeDigitized</a></td><td>A tag used to record fractions of seconds for the DateTimeDigitized tag.</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+
+              <tr><td>37724</td><td>935C</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/imagesourcedata.html">ImageSourceData</a></td><td>Used by Adobe Photoshop.</td><td>Private</td><td>&nbsp;</td></tr>
+              
+               <tr><td>40091</td><td>9c9b</td><td nowrap="">XPTitle</td><td>Title tag used by Windows, encoded in UCS2</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+               
+               <tr><td>40092</td><td>9c9c</td><td nowrap="">XPComment</td><td>Comment tag used by Windows, encoded in UCS2</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+
+               <tr><td>40093</td><td>9c9d</td><td nowrap="">XPAuthor</td><td>Author tag used by Windows, encoded in UCS2</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+
+               <tr><td>40094</td><td>9c9e</td><td nowrap="">XPKeywords</td><td>Keywords tag used by Windows, encoded in UCS2</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+
+               <tr><td>40095</td><td>9c9f</td><td nowrap="">XPSubject</td><td>Subject tag used by Windows, encoded in UCS2</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+
+
+			                <tr><td>40960</td><td>A000</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/flashpixversion.html">FlashpixVersion</a></td><td>The Flashpix format version supported by a FPXR file.</td><td>Exif Private IFD</td>
+
+          <td>Mandatory in the Exif IFD</td>
+
+        </tr>
+
+              <tr><td>40961</td><td>A001</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/colorspace.html">ColorSpace</a></td><td>The color space information tag is always recorded as the color space specifier.</td><td>Exif Private IFD</td>
+
+          <td>Mandatory in the Exif IFD</td>
+
+        </tr>
+
+              <tr><td>40962</td><td>A002</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/pixelxdimension.html">PixelXDimension</a></td><td>Specific to compressed data; the valid width of the meaningful image.</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+
+              <tr><td>40963</td><td>A003</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/pixelydimension.html">PixelYDimension</a></td><td>Specific to compressed data; the valid height of the meaningful image.</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+
+              <tr><td>40964</td><td>A004</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/relatedsoundfile.html">RelatedSoundFile</a></td><td>Used to record the name of an audio file related to the image data.</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+
+              <tr><td>40965</td><td>A005</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/interoperabilityifd.html">Interoperability IFD</a></td><td>A pointer to the Exif-related Interoperability IFD.</td><td>Private</td><td>&nbsp;</td></tr>
+
+			                <tr><td>41483</td><td>A20B</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/flashenergy.html">FlashEnergy</a></td><td>Indicates the strobe energy at the time the image is captured, as measured in Beam Candle Power Seconds</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+
+              <tr><td>41484</td><td>A20C</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/spatialfrequencyresponse.html">SpatialFrequencyResponse</a></td><td>Records the camera or input device spatial frequency table and SFR values in the direction of image width, image height, and diagonal direction, as specified in ISO 12233.</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+
+              <tr><td>41486</td><td>A20E</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/focalplanexresolution.html">FocalPlaneXResolution</a></td><td>Indicates the number of pixels in the image width (X) direction per FocalPlaneResolutionUnit on the camera focal plane.</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+
+              <tr><td>41487</td><td>A20F</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/focalplaneyresolution.html">FocalPlaneYResolution</a></td><td>Indicates the number of pixels in the image height (Y) direction per FocalPlaneResolutionUnit on the camera focal plane.</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+
+              <tr><td>41488</td><td>A210</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/focalplaneresolutionunit.html">FocalPlaneResolutionUnit</a></td><td>Indicates the unit for measuring FocalPlaneXResolution and FocalPlaneYResolution.</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+
+              <tr><td>41492</td><td>A214</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/subjectlocation.html">SubjectLocation</a></td><td>Indicates the location of the main subject in the scene.</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+
+              <tr><td>41493</td><td>A215</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/exposureindex.html">ExposureIndex</a></td><td>Indicates the exposure index selected on the camera or input device at the time the image is captured.</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+
+              <tr><td>41495</td><td>A217</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/sensingmethod.html">SensingMethod</a></td><td>Indicates the image sensor type on the camera or input device.</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+
+              <tr><td>41728</td><td>A300</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/filesource.html">FileSource</a></td><td>Indicates the image source.</td><td>Exif Private IFD</td><td>Req'd in LC NDNP <a href="https://www.loc.gov/ndnp/guidelines/archive/TIFFSpecs.pdf">TIFF profile</a>.  Values: "microfilm," "microfiche," or "print."</td></tr>
+
+              <tr><td>41729</td><td>A301</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/scenetype.html">SceneType</a></td><td>Indicates the type of scene.</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+
+              <tr><td>41730</td><td>A302</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/cfapattern.html">CFAPattern</a></td><td>Indicates the color filter array (CFA) geometric pattern of the image sensor when a one-chip color area sensor is used.</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+
+              <tr><td>41985</td><td>A401</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/customrendered.html">CustomRendered</a></td><td>Indicates the use of special processing on image data, such as rendering geared to output.</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+
+              <tr><td>41986</td><td>A402</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/exposuremode.html">ExposureMode</a></td><td>Indicates the exposure mode set when the image was shot.</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+
+              <tr><td>41987</td><td>A403</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/whitebalance.html">WhiteBalance</a></td><td>Indicates the white balance mode set when the image was shot.</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+
+              <tr><td>41988</td><td>A404</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/digitalzoomratio.html">DigitalZoomRatio</a></td><td>Indicates the digital zoom ratio when the image was shot.</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+
+              <tr><td>41989</td><td>A405</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/focallengthin35mmfilm.html">FocalLengthIn35mmFilm</a></td><td>Indicates the equivalent focal length assuming a 35mm film camera, in mm.</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+
+              <tr><td>41990</td><td>A406</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/scenecapturetype.html">SceneCaptureType</a></td><td>Indicates the type of scene that was shot.</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+
+              <tr><td>41991</td><td>A407</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/gaincontrol.html">GainControl</a></td><td>Indicates the degree of overall image gain adjustment.</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+
+              <tr><td>41992</td><td>A408</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/contrast.html">Contrast</a></td><td>Indicates the direction of contrast processing applied by the camera when the image was shot.</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+
+              <tr><td>41993</td><td>A409</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/saturation.html">Saturation</a></td><td>Indicates the direction of saturation processing applied by the camera when the image was shot.</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+
+              <tr><td>41994</td><td>A40A</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/sharpness.html">Sharpness</a></td><td>Indicates the direction of sharpness processing applied by the camera when the image was shot.</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+
+              <tr><td>41995</td><td>A40B</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/devicesettingdescription.html">DeviceSettingDescription</a></td><td>This tag indicates information on the picture-taking conditions of a particular camera model.</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+
+              <tr><td>41996</td><td>A40C</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/subjectdistancerange.html">SubjectDistanceRange</a></td><td>Indicates the distance to the subject.</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+
+			  <tr><td>42016</td><td>A420</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/privateifd/exif/imageuniqueid.html">ImageUniqueID</a></td><td>Indicates an identifier assigned uniquely to each image.</td><td>Exif Private IFD</td>
+
+          <td>Req'd in LC NDNP <a href="https://www.loc.gov/ndnp/guidelines/archive/TIFFSpecs.pdf">TIFF profile</a>. Microfilm reel sequence number. If from paper: "issue 
+
+            date-edition-page sequence."</td>
+
+        </tr>
+
+              <tr><td>42032</td><td>a430</td><td nowrap="">CameraOwnerName</td><td>Camera owner name as ASCII string.</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+              <tr><td>42033</td><td>a431</td><td nowrap="">BodySerialNumber</td><td>Camera body serial number as ASCII string.</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+              <tr><td>42034</td><td>a432</td><td nowrap="">LensSpecification</td><td>This tag notes minimum focal length, maximum focal length, minimum F number in the minimum focal length, and minimum F number in the maximum focal length, which are specification information for the lens that was used in photography. When the minimum F number is unknown, the notation is 0/0.</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+              <tr><td>42035</td><td>a433</td><td nowrap="">LensMake</td><td>Lens manufacturer name as ASCII string.</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+              <tr><td>42036</td><td>a434</td><td nowrap="">LensModel</td><td>Lens model name and number as ASCII string.</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+              <tr><td>42037</td><td>a434</td><td nowrap="">LensSerialNumber</td><td>Lens serial number as ASCII string.</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+
+
+
+              <tr><td>42112</td><td>A480</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/gdal_metadata.html">GDAL_METADATA</a></td><td>Used by the GDAL library, holds an XML list of name=value 'metadata' values about the image as a whole, and about specific samples.</td><td>Private</td><td>&nbsp;</td></tr>
+
+              <tr><td>42113</td><td>A481</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/gdal_nodata.html">GDAL_NODATA</a></td><td>Used by the GDAL library, contains an ASCII encoded nodata or background pixel value.</td><td>Private</td><td>&nbsp;</td></tr>
+
+              <tr><td>48129</td><td>BC01</td><td nowrap="">PixelFormat</td><td>A 128-bit Globally Unique Identifier (GUID) that identifies the image pixel format.</td><td><a href="http://www.microsoft.com/download/en/details.aspx?displaylang=en&amp;id=1915">HD Photo Feature Spec</a>, p. 17</td><td>&nbsp;</td></tr>
+
+<tr><td>48130</td><td>BC02</td><td nowrap="">Transformation</td><td>Specifies the transformation to be applied when decoding the image to present the desired representation.</td><td><a href="http://www.microsoft.com/download/en/details.aspx?displaylang=en&amp;id=1915">HD Photo Feature Spec</a>, p. 23</td><td>&nbsp;</td></tr>
+
+<tr><td>48131</td><td>BC03</td><td nowrap="">Uncompressed</td><td>Specifies that image data is uncompressed.</td><td><a href="http://www.microsoft.com/download/en/details.aspx?displaylang=en&amp;id=1915">HD Photo Feature Spec</a>, p. 23</td><td>&nbsp;</td></tr>
+
+ <tr><td>48132</td><td>BC04</td><td nowrap="">ImageType</td><td>Specifies the image type of each individual frame in a multi-frame file.</td><td><a href="http://www.microsoft.com/download/en/details.aspx?displaylang=en&amp;id=1915">HD Photo Feature Spec</a>, p. 27</td><td>&nbsp;</td></tr>
+
+<tr><td>48256</td><td>BC80</td><td nowrap="">ImageWidth</td><td>Specifies the number of columns in the transformed photo, or the number of pixels per scan line.</td><td><a href="http://www.microsoft.com/download/en/details.aspx?displaylang=en&amp;id=1915">HD Photo Feature Spec</a>, p. 21</td><td>&nbsp;</td></tr>
+
+			  	<tr><td>48257</td><td>BC81</td><td nowrap="">ImageHeight</td><td>Specifies the number of pixels or scan lines in the transformed photo.</td><td><a href="http://www.microsoft.com/download/en/details.aspx?displaylang=en&amp;id=1915">HD Photo Feature Spec</a>, p. 21</td><td>&nbsp;</td></tr>
+
+ <tr><td>48258</td><td>BC82</td><td nowrap="">WidthResolution</td><td>Specifies the horizontal resolution of a transformed image expressed in pixels per inch.</td><td><a href="http://www.microsoft.com/download/en/details.aspx?displaylang=en&amp;id=1915">HD Photo Feature Spec</a>, p. 21</td><td>&nbsp;</td></tr>
+
+ <tr><td>48259</td><td>BC83</td><td nowrap="">HeightResolution</td><td>Specifies the vertical resolution of a transformed image expressed in pixels per inch.</td><td><a href="http://www.microsoft.com/download/en/details.aspx?displaylang=en&amp;id=1915">HD Photo Feature Spec</a>, p. 21</td><td>&nbsp;</td></tr>
+
+ <tr><td>48320</td><td>BCC0</td><td nowrap="">ImageOffset</td><td>Specifies the byte offset pointer to the beginning of the photo data, relative to the beginning of the file.</td><td><a href="http://www.microsoft.com/download/en/details.aspx?displaylang=en&amp;id=1915">HD Photo Feature Spec</a>, p. 22</td><td>&nbsp;</td></tr>
+
+ <tr><td>48321</td><td>BCC1</td><td nowrap="">ImageByteCount</td><td>Specifies the size of the photo in bytes.</td><td><a href="http://www.microsoft.com/download/en/details.aspx?displaylang=en&amp;id=1915">HD Photo Feature Spec</a>, p. 22</td><td>&nbsp;</td></tr>
+
+ <tr><td>48322</td><td>BCC2</td><td nowrap="">AlphaOffset</td><td>Specifies the byte offset pointer the beginning of the planar alpha channel data, relative to the beginning of the file.</td><td><a href="http://www.microsoft.com/download/en/details.aspx?displaylang=en&amp;id=1915">HD Photo Feature Spec</a>, p. 22</td><td>&nbsp;</td></tr>
+
+ <tr><td>48323</td><td>BCC3</td><td nowrap="">AlphaByteCount</td><td>Specifies the size of the alpha channel data in bytes.</td><td><a href="http://www.microsoft.com/download/en/details.aspx?displaylang=en&amp;id=1915">HD Photo Feature Spec</a>, p. 23</td><td>&nbsp;</td></tr>
+
+ <tr><td>48324</td><td>BCC4</td><td nowrap="">ImageDataDiscard</td><td>Signifies the level of data that has been discarded from the image as a result of a compressed domain transcode to reduce the file size.</td><td><a href="http://www.microsoft.com/download/en/details.aspx?displaylang=en&amp;id=1915">HD Photo Feature Spec</a>, p. 25</td><td>&nbsp;</td></tr>
+
+ <tr><td>48325</td><td>BCC5</td><td nowrap="">AlphaDataDiscard</td><td>Signifies the level of data that has been discarded from the planar alpha channel as a result of a compressed domain transcode to reduce the file size.</td><td><a href="http://www.microsoft.com/download/en/details.aspx?displaylang=en&amp;id=1915">HD Photo Feature Spec</a>, p. 26</td><td>&nbsp;</td></tr>
+
+ <tr><td>48132</td><td>BC04</td><td nowrap="">ImageType</td><td>Specifies the image type of each individual frame in a multi-frame file.</td><td><a href="http://www.microsoft.com/download/en/details.aspx?displaylang=en&amp;id=1915">HD Photo Feature Spec</a>, p. 27</td><td>&nbsp;</td></tr>
+
+              <tr><td>50215</td><td>C427</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/ocescanjobdescription.html">Oce Scanjob Description</a></td><td>Used in the Oce scanning process.</td><td>Private</td><td>&nbsp;</td></tr>
+
+              <tr><td>50216</td><td>C428</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/oceapplicationselector.html">Oce Application Selector</a></td><td>Used in the Oce scanning process.</td><td>Private</td><td>&nbsp;</td></tr>
+
+              <tr><td>50217</td><td>C429</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/oceidentificationnumber.html">Oce Identification Number</a></td><td>Used in the Oce scanning process.</td><td>Private</td><td>&nbsp;</td></tr>
+
+              <tr><td>50218</td><td>C42A</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/oceimagelogiccharacteristics.html">Oce ImageLogic Characteristics</a></td><td>Used in the Oce scanning process.</td><td>Private</td><td>&nbsp;</td></tr>
+              
+              <tr><td>50341</td><td>c4a5</td><td nowrap="">PrintImageMatching</td><td>Description needed.</td><td>Exif Private IFD</td><td>&nbsp;</td></tr>
+
+              <tr><td>50706</td><td>C612</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/dngversion.html">DNGVersion</a></td>
+
+          <td>Encodes DNG four-tier version number; for version 1.1.0.0, the tag 
+
+            contains the bytes <em>1, 1, 0, 0</em>. Used in IFD 0 of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 17</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+              <tr><td>50707</td><td>C613</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/dngbackwardversion.html">DNGBackwardVersion</a></td>
+
+          <td>Defines oldest version of spec with which file is compatible. Used 
+
+            in IFD 0 of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 17</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+              <tr><td>50708</td><td>C614</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/uniquecameramodel.html">UniqueCameraModel</a></td>
+
+          <td>Unique, non-localized nbame for camera model. Used in IFD 0 of DNG 
+
+            files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 18</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+              <tr><td>50709</td><td>C615</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/localizedcameramodel.html">LocalizedCameraModel</a></td>
+
+          <td>Similar to 50708, with localized camera name. Used in IFD 0 of DNG 
+
+            files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 19</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+              <tr><td>50710</td><td>C616</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/cfaplanecolor.html">CFAPlaneColor</a></td>
+
+          <td>Mapping between values in the CFAPattern tag and the plane numbers 
+
+            in LinearRaw space. Used in Raw IFD of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 19</p>
+            <p>Exif Private IFD</p></td>
+
+          <td>Required for non-RGB CFA images.</td>
+
+        </tr>
+
+              <tr><td>50711</td><td>C617</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/cfalayout.html">CFALayout</a></td>
+
+          <td>Spatial layout of the CFA. Used in Raw IFD of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 20</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+              <tr><td>50712</td><td>C618</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/linearizationtable.html">LinearizationTable</a></td>
+
+          <td>Lookup table that maps stored values to linear values. Used in Raw 
+
+            IFD of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 21</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+              <tr><td>50713</td><td>C619</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/blacklevelrepeatdim.html">BlackLevelRepeatDim</a></td>
+
+          <td>Repeat pattern size for BlackLevel tag. Used in Raw IFD of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 21</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+              <tr><td>50714</td><td>C61A</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/blacklevel.html">BlackLevel</a></td>
+
+          <td>Specifies the zero light encoding level.Used in Raw IFD of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 22</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+              <tr><td>50715</td><td>C61B</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/blackleveldeltah.html">BlackLevelDeltaH</a></td>
+
+          <td>Specifies the difference between zero light encoding level for each 
+
+            column and the baseline zero light encoding level. Used in Raw IFD 
+
+            of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 22</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+              <tr><td>50716</td><td>C61C</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/blackleveldeltav.html">BlackLevelDeltaV</a></td>
+
+          <td>Specifies the difference between zero light encoding level for each 
+
+            row and the baseline zero light encoding level. Used in Raw IFD of 
+
+            DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 23</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+              <tr><td>50717</td><td>C61D</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/whitelevel.html">WhiteLevel</a></td>
+
+          <td>Specifies the fully saturated encoding level for the raw sample 
+
+            values. Used in Raw IFD of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 24</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+              <tr><td>50718</td><td>C61E</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/defaultscale.html">DefaultScale</a></td>
+
+          <td>For cameras with non-square pixels, specifies the default scale 
+
+            factors for each direction to convert the image to square pixels. 
+
+            Used in Raw IFD of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 24</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+              <tr><td>50719</td><td>C61F</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/defaultcroporigin.html">DefaultCropOrigin</a></td>
+
+          <td>Specifies the origin of the final image area, ignoring the extra 
+
+            pixels at edges used to prevent interpolation artifacts. Used in Raw 
+
+            IFD of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 25</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+              <tr><td>50720</td><td>C620</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/defaultcropsize.html">DefaultCropSize</a></td>
+
+          <td>Specifies size of final image area in raw image coordinates. Used 
+
+            in Raw IFD of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 26</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+              <tr><td>50721</td><td>C621</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/colormatrix1.html">ColorMatrix1</a></td>
+
+          <td>Defines a transformation matrix that converts XYZ values to reference 
+
+            camera native color space values, under the first calibration illuminant. 
+
+            Used in IFD 0 of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 27</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+              <tr><td>50722</td><td>C622</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/colormatrix2.html">ColorMatrix2</a></td>
+
+          <td>Defines a transformation matrix that converts XYZ values to reference 
+
+            camera native color space values, under the second calibration illuminant. 
+
+            Used in IFD 0 of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 28</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+              <tr><td>50723</td><td>C623</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/cameracalibration1.html">CameraCalibration1</a></td>
+
+          <td>Defines a calibration matrix that transforms reference camera native 
+
+            space values to individual camera native space values under the first 
+
+            calibration illuminant. Used in IFD 0 of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 28</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+              <tr><td>50724</td><td>C624</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/cameracalibration2.html">CameraCalibration2</a></td>
+
+          <td>Defines a calibration matrix that transforms reference camera native 
+
+            space values to individual camera native space values under the second 
+
+            calibration illuminant. Used in IFD 0 of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 29</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+              <tr><td>50725</td><td>C625</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/reductionmatrix1.html">ReductionMatrix1</a></td>
+
+          <td>Defines a dimensionality reduction matrix for use as the first stage 
+
+            in converting color camera native space values to XYZ values, under 
+
+            the first calibration illuminant. Used in IFD 0 of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 30</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+              <tr><td>50726</td><td>C626</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/reductionmatrix2.html">ReductionMatrix2</a></td>
+
+          <td>Defines a dimensionality reduction matrix for use as the first stage 
+
+            in converting color camera native space values to XYZ values, under 
+
+            the second calibration illuminant. Used in IFD 0 of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 30</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+              <tr><td>50727</td><td>C627</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/analogbalance.html">AnalogBalance</a></td>
+
+          <td>Pertaining to white balance, defines the gain, either analog or 
+
+            digital, that has been applied to the stored raw values. Used in IFD 
+
+            0 of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 31</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+              <tr><td>50728</td><td>C628</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/asshotneutral.html">AsShotNeutral</a></td>
+
+          <td>Specifies the selected white balance at the time of capture, encoded 
+
+            as the coordinates of a perfectly neutral color in linear reference 
+
+            space values. Used in IFD 0 of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 31</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+              <tr><td>50729</td><td>C629</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/asshotwhitexy.html">AsShotWhiteXY</a></td>
+
+          <td>Specifies the selected white balance at the time of capture, encoded 
+
+            as x-y chromaticity coordinates. Used in IFD 0 of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 32</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+              <tr><td>50730</td><td>C62A</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/baselineexposure.html">BaselineExposure</a></td>
+
+          <td>Specifies in EV units how much to move the zero point for exposure 
+
+            compensation. Used in IFD 0 of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 32</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+              <tr><td>50731</td><td>C62B</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/baselinenoise.html">BaselineNoise</a></td>
+
+          <td>Specifies the relative noise of the camera model at a baseline ISO 
+
+            value of 100, compared to reference camera model. Used in IFD 0 of 
+
+            DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 33</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+              <tr><td>50732</td><td>C62C</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/baselinesharpness.html">BaselineSharpness</a></td>
+
+          <td>Specifies the relative amount of sharpening required for this camera 
+
+            model, compared to reference camera model. Used in IFD 0 of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 33</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+              <tr><td>50733</td><td>C62D</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/bayergreensplit.html">BayerGreenSplit</a></td>
+
+          <td>For CFA images, specifies, in arbitrary units, how closely the values 
+
+            of the green pixels in the blue/green rows track the values of the 
+
+            green pixels in the red/green rows. Used in Raw IFD of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 34</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+              <tr><td>50734</td><td>C62E</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/linearresponselimit.html">LinearResponseLimit</a></td>
+
+          <td>Specifies the fraction of the encoding range above which the response 
+
+            may become significantly non-linear. Used in IFD 0 of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 34</p>
+            <p>Exif Private IFD<br>
+          </p></td><td>&nbsp;</td></tr>
+
+              <tr><td>50735</td><td>C62F</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/cameraserialnumber.html">CameraSerialNumber</a></td>
+
+          <td>Serial number of camera. Used in IFD 0 of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 35</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+              <tr><td>50736</td><td>C630</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/lensinfo.html">LensInfo</a></td>
+
+          <td>Information about the lens. Used in IFD 0 of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 35</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+              <tr><td>50737</td><td>C631</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/chromablurradius.html">ChromaBlurRadius</a></td>
+
+          <td>Normally for non-CFA images, provides a hint about how much chroma 
+
+            blur ought to be applied. Used in Raw IFD of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 36</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+              <tr><td>50738</td><td>C632</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/antialiasstrength.html">AntiAliasStrength</a></td>
+
+          <td>Provides a hint about the strength of the camera's anti-aliasing 
+
+            filter. Used in Raw IFD of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 36</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+              <tr><td>50739</td><td>&nbsp;</td><td nowrap="">ShadowScale</td>
+
+          <td>Used by Adobe Camera Raw to control sensitivity of its shadows slider. 
+
+            Used in IFD 0 of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 37</p>
+            <p>Exif Private IFD</p></td>
+
+          <td>&nbsp;</td></tr>
+
+			  <tr><td>50740</td><td>C634</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/dngprivatedata.html">DNGPrivateData</a></td>
+
+          <td>Provides a way for camera manufacturers to store private data in 
+
+            DNG files for use by their own raw convertors. Used in IFD 0 of DNG 
+
+            files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 37</p>
+            <p>Exif Private IFD</p></td>
+
+          <td>&nbsp;</td></tr>
+
+              <tr><td>50741</td><td>C635</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/makernotesafety.html">MakerNoteSafety</a></td>
+
+          <td>Lets the DNG reader know whether the Exif MakerNote tag is safe 
+
+            to preserve. Used in IFD 0 of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 38</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+              <tr><td>50778</td><td>C65A</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/calibrationilluminant1.html">CalibrationIlluminant1</a></td>
+
+          <td>Illuminant used for first set of calibration tags. Used in IFD 0 
+
+            of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 26</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+              <tr><td>50779</td><td>C65B</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/calibrationilluminant2.html">CalibrationIlluminant2</a></td>
+
+          <td>Illuminant used for second set of calibration tags. Used in IFD 
+
+            0 of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 27</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+              <tr><td>50780</td><td>C65C</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/bestqualityscale.html">BestQualityScale</a></td>
+
+          <td>Specifies the amount by which the values of the DefaultScale tag 
+
+            need to be multiplied to achieve best quality image size. Used in 
+
+            Raw IFD of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 25</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+			  <tr><td>50781</td><td>&nbsp;</td><td nowrap="">RawDataUniqueID</td>
+
+          <td>Contains a 16-byte unique identifier for the raw image file in the 
+
+            DNG file. Used in IFD 0 of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 39</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+              <tr><td>50784</td><td>C660</td><td nowrap=""><a href="http://www.awaresystems.be/imaging/tiff/tifftags/aliaslayermetadata.html">Alias Layer Metadata</a></td><td>Alias Sketchbook Pro layer usage description.</td><td>Private</td><td>&nbsp;</td></tr>
+
+			  <tr><td>50827</td><td>&nbsp;</td><td nowrap="">OriginalRawFileName</td>
+
+          <td>Name of original file if the DNG file results from conversion from 
+
+            a non-DNG raw file. Used in IFD 0 of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 39</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+			  <tr><td>50828</td><td>&nbsp;</td><td nowrap="">OriginalRawFileData</td>
+
+          <td>If the DNG file was converted from a non-DNG raw file, then this 
+
+            tag contains the original raw data. Used in IFD 0 of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 40</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+			  <tr><td>50829</td><td>&nbsp;</td><td nowrap="">ActiveArea</td>
+
+          <td>Defines the active (non-masked) pixels of the sensor. Used in Raw 
+
+            IFD of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 41</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+<tr><td>50830</td><td>&nbsp;</td><td nowrap="">MaskedAreas</td>
+
+          <td>List of non-overlapping rectangle coordinates of fully masked pixels, 
+
+            which can optimally be used by DNG readers to measure the black encoding 
+
+            level. Used in Raw IFD of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 42</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+<tr><td>50831</td><td>&nbsp;</td><td nowrap="">AsShotICCProfile</td>
+
+          <td>Contains ICC profile that, in conjunction with the AsShotPreProfileMatrix 
+
+            tag, specifies a default color rendering from camera color space coordinates 
+
+            (linear reference values) into the ICC profile connection space. Used 
+
+            in IFD 0 of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 42</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+<tr><td>50832</td><td>&nbsp;</td><td nowrap="">AsShotPreProfileMatrix</td>
+
+          <td>Specifies a matrix that should be applied to the camera color space 
+
+            coordinates before processing the values through the ICC profile specified 
+
+            in the AsShotICCProfile tag. Used in IFD 0 of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 43</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+<tr><td>50833</td><td>&nbsp;</td><td nowrap="">CurrentICCProfile</td>
+
+          <td>The CurrentICCProfile and CurrentPreProfileMatrix tags have the 
+
+            same purpose and usage as<br>
+
+            the AsShotICCProfile and AsShotPreProfileMatrix tag pair, except they 
+
+            are for use by raw file<br>
+
+            editors rather than camera manufacturers. Used in IFD 0 of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 44</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+<tr><td>50834</td><td>&nbsp;</td><td nowrap="">CurrentPreProfileMatrix</td>
+
+          <td>The CurrentICCProfile and CurrentPreProfileMatrix tags have the 
+
+            same purpose and usage as<br>
+
+            the AsShotICCProfile and AsShotPreProfileMatrix tag pair, except they 
+
+            are for use by raw file<br>
+
+            editors rather than camera manufacturers. Used in IFD 0 of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 44</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+<tr><td>50879</td><td>C6BF</td><td nowrap="">ColorimetricReference</td>
+
+          <td>The DNG color model documents a transform between camera colors and CIE XYZ values. This tag describes the colorimetric reference for the CIE XYZ values. 0 = The XYZ values are scene-referred. 1 = The XYZ values are output-referred, using the ICC profile perceptual dynamic range. Used in IFD 0 of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 45</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+		  
+		  <tr><td>50931</td><td>C6F3</td><td nowrap="">CameraCalibrationSignature</td>
+
+          <td>A UTF-8 encoded string associated with the CameraCalibration1 and CameraCalibration2 tags. Used in IFD 0 of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 46</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+		   <tr><td>50932</td><td>C6F4</td><td nowrap="">ProfileCalibrationSignature</td>
+
+          <td>A UTF-8 encoded string associated with the camera profile tags. Used in IFD 0 or CameraProfile IFD of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 46</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+		  
+		  <tr><td>50933</td><td>C6F5</td><td nowrap="">ExtraCameraProfiles</td>
+
+          <td>A list of file offsets to extra Camera Profile IFDs. The format of a camera profile begins with a 16-bit byte order mark (MM or II) followed by a 16-bit "magic" number equal to 0x4352 (CR), a 32-bit IFD offset, and then a standard TIFF format IFD. Used in IFD 0 of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 47</p></td><td>&nbsp;</td></tr>
+		  
+		  <tr><td>50934</td><td>C6F6</td><td nowrap="">AsShotProfileName</td>
+
+          <td>A UTF-8 encoded string containing the name of the "as shot" camera profile, if any. Used in IFD 0 of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 47</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+		  
+		   <tr><td>50935</td><td>C6F7</td><td nowrap="">NoiseReductionApplied</td>
+
+          <td>Indicates how much noise reduction has been applied to the raw data on a scale of 0.0 to 1.0. A 0.0 value indicates that no noise reduction has been applied. A 1.0 value indicates that the "ideal" amount of noise reduction has been applied, i.e. that the DNG reader should not apply additional noise reduction by default. A value of 0/0 indicates that this parameter is unknown. Used in Raw IFD of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 48</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+		  
+		  <tr><td>50936</td><td>C6F8</td><td nowrap="">ProfileName</td>
+
+          <td>A UTF-8 encoded string containing the name of the camera profile. Used in IFD 0 or Camera Profile IFD of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 48</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+		  
+		  <tr><td>50937</td><td>C6F9</td><td nowrap="">ProfileHueSatMapDims</td>
+
+          <td>Specifies the number of input samples in each dimension of the hue/saturation/value mapping tables. The data for these tables are stored in ProfileHueSatMapData1 and ProfileHueSatMapData2 tags. Allowed values include the following: HueDivisions &gt;= 1; SaturationDivisions &gt;= 2; ValueDivisions &gt;=1. Used in IFD 0 or Camera Profile IFD of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 49</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+		  
+ <tr><td>50938</td><td>C6FA</td><td nowrap="">ProfileHueSatMapData1</td>
+
+          <td>Contains the data for the first hue/saturation/value mapping table. Each entry of the table contains three 32-bit IEEE floating-point values. The first entry is hue shift in degrees; the second entry is saturation scale factor; and the third entry is a value scale factor. Used in IFD 0 or Camera Profile IFD of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 50</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>		  
+		  
+		   <tr><td>50939</td><td>C6FB</td><td nowrap="">ProfileHueSatMapData2</td>
+
+          <td>Contains the data for the second hue/saturation/value mapping table. Each entry of the table contains three 32-bit IEEE floating-point values. The first entry is hue shift in degrees; the second entry is saturation scale factor; and the third entry is a value scale factor. Used in IFD 0 or Camera Profile IFD of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 50-1</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+		  
+		  	   <tr><td>50940</td><td>C6FC</td><td nowrap="">ProfileToneCurve</td>
+
+          <td>Contains a default tone curve that can be applied while processing the image as a starting point for user adjustments. The curve is specified as a list of 32-bit IEEE floating-point value pairs in linear gamma. Each sample has an input value in the range of 0.0 to 1.0, and an output value in the range of 0.0 to 1.0. The first sample is required to be (0.0, 0.0), and the last sample is required to be (1.0, 1.0). Interpolated the curve using a cubic spline. Used in IFD 0 or Camera Profile IFD of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 51</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+		  
+		     <tr><td>50941</td><td>C6FD</td><td nowrap="">ProfileEmbedPolicy</td>
+
+          <td>Contains information about the usage rules for the associated camera profile. The valid values and meanings are: 0 = “allow copying”; 1 = “embed if used”; 2 = “embed never”; and 3 = “no restrictions”. Used in IFD 0 or Camera Profile IFD of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 52</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+		  
+		  <tr><td>50942</td><td>C6FE</td><td nowrap="">ProfileCopyright</td>
+
+          <td>Contains information about the usage rules for the associated camera profile. The valid values and meanings are: 0 = “allow copying”; 1 = “embed if used”; 2 = “embed never”; and 3 = “no restrictions”. Used in IFD 0 or Camera Profile IFD of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 52</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+		  
+		  <tr><td>50964</td><td>C714</td><td nowrap="">ForwardMatrix1</td>
+
+          <td>Defines a matrix that maps white balanced camera colors to XYZ D50 colors. Used in IFD 0 or Camera Profile IFD of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 53</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+		  
+	  <tr><td>50965</td><td>C715</td><td nowrap="">ForwardMatrix2</td>
+
+          <td>Defines a matrix that maps white balanced camera colors to XYZ D50 colors. Used in IFD 0 or Camera Profile IFD of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 54</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+	  <tr><td>50966</td><td>C716</td><td nowrap="">PreviewApplicationName</td>
+
+          <td>A UTF-8 encoded string containing the name of the application that created the preview stored in the IFD. Used in Preview IFD of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 54</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+		  
+		  	  <tr><td>50967</td><td>C717</td><td nowrap="">PreviewApplicationVersion</td>
+
+          <td>A UTF-8 encoded string containing the version number of the application that created the preview stored in the IFD. Used in Preview IFD of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 55</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+	 <tr><td>50968</td><td>C718</td><td nowrap="">PreviewSettingsName</td>
+
+          <td>A UTF-8 encoded string containing the name of the conversion settings (for example, snapshot name) used for the preview stored in the IFD. Used in Preview IFD of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 55</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+		  
+		   <tr><td>50969</td><td>C719</td><td nowrap="">PreviewSettingsDigest</td>
+
+          <td>A unique ID of the conversion settings (for example, MD5 digest) used to render the preview stored in the IFD. Used in Preview IFD of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 56</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+		  
+		   <tr><td>50970</td><td>C71A</td><td nowrap="">PreviewColorSpace</td>
+
+          <td>This tag specifies the color space in which the rendered preview in this IFD is stored. The valid values include: 0 = Unknown; 1 = Gray Gamma 2.2; 2 = sRGB; 3 = Adobe RGB; and 4 = ProPhoto RGB. Used in Preview IFD of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 56</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+		  
+		   <tr><td>50971</td><td>C71B</td><td nowrap="">PreviewDateTime</td>
+
+          <td>This tag is an ASCII string containing the name of the date/time at which the preview stored in the IFD was rendered, encoded using ISO 8601 format. Used in Preview IFD of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 57</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+		  
+		  <tr><td>50972</td><td>C71C</td><td nowrap="">RawImageDigest</td>
+
+          <td>MD5 digest of the raw image data. All pixels in the image are processed in row-scan order. Each pixel is zero padded to 16 or 32 bits deep (16-bit for data less than or equal to 16 bits deep, 32-bit otherwise). The data is processed in little-endian byte order. Used in IFD 0 of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 57</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+		  	  <tr><td>50973</td><td>C71D</td><td nowrap="">OriginalRawFileDigest</td>
+
+          <td>MD5 digest of the data stored in the OriginalRawFileData tag. Used in IFD 0 of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 58</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+		  
+		  	  	  <tr><td>50974</td><td>C71E</td><td nowrap="">SubTileBlockSize</td>
+
+          <td>Normally, pixels within a tile are stored in simple row-scan order. This tag specifies that the pixels within a tile should be grouped first into rectangular blocks of the specified size. These blocks are stored in row-scan order. Within each block, the pixels are stored in row-scan order. Used in Raw IFD of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 58</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+		  	  	  <tr><td>50975</td><td>C71F</td><td nowrap="">RowInterleaveFactor</td>
+
+          <td>Specifies that rows of the image are stored in interleaved order. The value of the tag specifies the number of interleaved fields. Used in Raw IFD of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 59</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+		  
+ 	  	  <tr><td>50981</td><td>C725</td><td nowrap="">ProfileLookTableDims</td>
+
+          <td>Specifies the number of input samples in each dimension of a default "look" table. The data for this table is stored in the ProfileLookTableData tag. Allowed values include: HueDivisions &gt;= 1; SaturationDivisions &gt;= 2; and ValueDivisions &gt;= 1. Used in IFD 0 or Camera Profile IFD of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 59</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+		  
+		   	  	  <tr><td>50982</td><td>C726</td><td nowrap="">ProfileLookTableData</td>
+
+          <td>Default "look" table that can be applied while processing the image as a starting point for user adjustment. This table uses the same format as the tables stored in the ProfileHueSatMapData1 and ProfileHueSatMapData2 tags, and is applied in the same color space. However, it should be applied later in the processing pipe, after any exposure compensation and/or fill light stages, but before any tone curve stage. Each entry of the table contains three 32-bit IEEE floating-point values. The first entry is hue shift in degrees, the second entry is a saturation scale factor, and the third entry is a value scale factor. Used in IFD 0 or Camera Profile IFD of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 60</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+		  
+<tr><td>51008</td><td>C740</td><td nowrap="">OpcodeList1</td>
+
+          <td>Specifies the list of opcodes (image processing operation codes) that should be applied to the raw image, as read directly from the file. Used in Raw IFD of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 61</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+<tr><td>51009</td><td>C741</td><td nowrap="">OpcodeList2</td>
+
+          <td>Specifies the list of opcodes (image processing operation codes) that should be applied to the raw image, just after it has been mapped to linear reference values. Used in Raw IFD of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 61</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+		  <tr><td>51022</td><td>C74E</td><td nowrap="">OpcodeList3</td>
+
+          <td>Specifies the list of opcodes (image processing operation codes) that should be applied to the raw image, just after it has been demosaiced. Used in Raw IFD of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 62</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+		  
+<tr><td>51041</td><td>C761</td><td nowrap="">NoiseProfile</td>
+
+          <td>Describes the amount of noise in a raw image; models the amount of signal-dependent photon (shot) noise and signal-independent sensor readout noise, two common sources of noise in raw images. Used in Raw IFD of DNG files.</td>
+
+          <td><p><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec.pdf">DNG spec</a> (1.3, 2009), p. 62-3</p>
+          <p>Exif Private IFD</p></td><td>&nbsp;</td></tr>
+
+<tr><td>51089</td><td>C791</td><td nowrap="">OriginalDefaultFinalSize</td>
+
+          <td>If this file is a proxy for a larger original DNG file, this tag specifics the default final size of the larger original file from which this proxy was generated. The default value for this tag is default final size
+of the current DNG file, which is DefaultCropSize * DefaultScale.</td>
+
+          <td><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec_1.4.0.0.pdf">DNG spec</a> (1.4, 2012), p. 74</td><td>&nbsp;</td></tr>
+ 
+ <tr><td>51090</td><td>C792</td><td nowrap="">OriginalBestQualityFinalSize</td>
+
+          <td>If this file is a proxy for a larger original DNG file, this tag specifics the best quality final size of the larger original file from which this proxy was generated. The default value for this tag is the OriginalDefaultFinalSize, if specified. Otherwise the default value for this tag is the best quality size of the current DNG file, which is DefaultCropSize * DefaultScale * BestQualityScale.</td>
+
+          <td><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec_1.4.0.0.pdf">DNG spec</a> (1.4, 2012), p. 75</td><td>&nbsp;</td></tr>
+
+<tr><td>51091</td><td>C793</td><td nowrap="">OriginalDefaultCropSize</td>
+
+          <td>If this file is a proxy for a larger original DNG file, this tag specifics the DefaultCropSize of the larger original file from
+which this proxy was generated.  The default value for this tag is the OriginalDefaultFinalSize, if specified. Otherwise, the default value for this tag is the DefaultCropSize of the current DNG file.</td>
+
+          <td><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec_1.4.0.0.pdf">DNG spec</a> (1.4, 2012), p. 75</td><td>&nbsp;</td></tr>
+ 
+ <tr><td>51107</td><td>C7A3</td><td nowrap="">ProfileHueSatMapEncoding</td>
+
+          <td>Provides a way for color profiles to specify how indexing into a 3D HueSatMap is performed during raw conversion. This tag is not applicable to 2.5D HueSatMap tables (i.e., where the Value dimension is 1). The currently defined values are: 0 = Linear encoding (method described in DNG spec); 1 = sRGB encoding (method described in DNG spec).
+</td>
+
+          <td><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec_1.4.0.0.pdf">DNG spec</a> (1.4, 2012), p. 73</td><td>&nbsp;</td></tr>
+   
+<tr><td>51108</td><td>C7A4</td><td nowrap="">ProfileLookTableEncoding</td>
+
+          <td>Provides a way for color profiles to specify how indexing into a 3D LookTable is performed during raw conversion. This tag is not applicable to a 2.5D LookTable (i.e., where the Value dimension is 1). The currently defined values are: 0 = Linear encoding (method described in DNG spec); 1 = sRGB encoding (method described in DNG spec).</td>
+
+          <td><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec_1.4.0.0.pdf">DNG spec</a> (1.4, 2012), p. 72-3</td><td>&nbsp;</td></tr>
+  
+<tr><td>51109</td><td>C7A5</td><td nowrap="">BaselineExposureOffset</td>
+
+          <td>Provides a way for color profiles to increase
+or decrease exposure during raw conversion. BaselineExposureOffset specifies the amount (in
+EV units) to add to th
+e BaselineExposure tag
+during image rendering. For example, if the
+BaselineExposure value fo
+r a given camera model
+is +0.3, and the BaselineExposureOffset value
+for a given camera profile used to render an
+image for that camera model is -0.7, then th
+e actual default exposure value used during
+rendering will be +0.3 - 0.7 = -0.4.</td>
+
+          <td><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec_1.4.0.0.pdf">DNG spec</a> (1.4, 2012), p. 71</td><td>&nbsp;</td></tr>
+                  
+         <tr><td>51110</td><td>C7A6</td><td nowrap="">DefaultBlackRender</td>
+
+          <td>This optional tag in a color profile provides a hint to the raw converter regarding how to handle the black point (e.g., flare subtraction) during rendering. The currently defined values are: 0 = Auto; 1 = None.  If set to Auto, the raw converter should perform black subtraction during rendering. The amount and method of black subtraction may be automatically determined and may be image-dependent.  If set to None, the raw converter should not perform any black subtraction during rendering.  This may be desirable when using color lookup tables (e.g., LookTable) or tone curves in camera profiles to perform a fixed, consistent level of black subtraction.
+</td>
+
+          <td><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec_1.4.0.0.pdf">DNG spec</a> (1.4, 2012), p. 71</td><td>&nbsp;</td></tr>
+
+         <tr><td>51111</td><td>C7A7</td><td nowrap="">NewRawImageDigest</td>
+
+          <td>This tag is a modified MD5 digest of the raw image data. It has been updated from the algorithm used to compute the RawImageDigest tag be more multi-processor friendly, and to support lossy compression algorithms. The details of the algorithm used to compute this tag are documented in the Adobe DNG SDK source code.</td>
+
+          <td><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec_1.4.0.0.pdf">DNG spec</a> (1.4, 2012), p. 76</td><td>&nbsp;</td></tr>
+
+         <tr><td>51112</td><td>C7A8</td><td nowrap="">RawToPreviewGain</td>
+
+          <td>The gain (what number the sample values are multiplied by) between the main raw IFD and the preview IFD containing this tag.</td>
+
+          <td><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec_1.4.0.0.pdf">DNG spec</a> (1.4, 2012), p. 76</td><td>&nbsp;</td></tr>
+
+<tr><td>51125</td><td>C7B5</td><td nowrap="">DefaultUserCrop</td>
+
+          <td>Specifies a default user crop rectangle in relative coordinates.  The values must satisfy: 0.0 &lt;= top &lt; bottom &lt;= 1.0; 0.0 &lt;= left &lt; right &lt;= 1.0.  The default values of (top = 0, left = 0, bottom = 1, right = 1) correspond exactly to the default crop rectangle (as specified by the DefaultCropOrigin and DefaultCropSize tags).</td>
+
+          <td><a href="http://wwwimages.adobe.com/www.adobe.com/content/dam/Adobe/en/products/photoshop/pdfs/dng_spec_1.4.0.0.pdf">DNG spec</a> (1.4, 2012), p. 70</td><td>&nbsp;</td></tr>
+
+
+            </tbody>
+
+          </table>
+
+
+
+<p class="footnote">
+
+<a name="1"><sup>1</sup></a>TIFF image classes are described in the 1992 TIFF 
+
+        6.0 <a href="http://partners.adobe.com/public/developer/en/tiff/TIFF6.pdf">specification</a> and may be summarized as follows:<br>
+
+• Class B.  Baseline bilevel.<br>
+
+• Class G.  Baseline grayscale.<br>
+
+• Class P.  Baseline palette-color.<br>
+
+• Class R.  Baseline RGB.<br>
+
+• Class Y.  Extension YCbCr.<br>
+
+</p>
+
+
+
+<p class="footnote">
+
+<a name="2"><sup>2</sup></a>The TIFF/IT specification (ISO 12639, 2004) defines the following image categories:<br>
+
+• CT. Color continuous-tone picture.<br>
+
+• LW. Color line art.<br>
+
+• HC. High-resolution continuous-tone.<br>
+
+• MP. Monochrome continuous-tone picture.<br>
+
+• BP. Binary picture.<br>
+
+• BL. Binary line art.<br>
+
+• SD. Screened data image.<br>
+
+• FP. Final page.<br>
+
+</p>
+
+<a href="https://www.loc.gov/preservation/digital/formats/content/tiff_tags.shtml#top">Back to top</a>
+
+</td></tr></tbody></table>
+
+
+
+<br>
+
+<div align="right" class="update">Last Updated: 01/ 5/2017</div>                                                                          
+
+<br> 
+
+ 
+
+<!-- end body area -->
+
+<!-- stopprint --> 
+
+
+
+<!-- begin footer table -->
+<table width="100%" border="0" cellspacing="0" cellpadding="0">
+  <tbody><tr> 
+    <td class="footer-bg"> 
+	<table cellpadding="3" cellspacing="0" border="0" width="100%" class="header-bg">
+        <tbody><tr valign="top">
+          <td class="header">&nbsp;</td>
+          <td align="right"> 
+            <div align="right" class="header"><a href="https://www.loc.gov/preservation/digital/index.html">Digital Preservation Home</a> | <a href="https://www.loc.gov/preservation/digital/formats/index.html">Digital Formats Home</a> &nbsp;&nbsp;&nbsp;</div>
+          </td>
+        </tr>
+     </tbody></table>
+	</td>
+  </tr>
+</tbody></table>
+<!-- end footer table -->
+ 
+
+
+
+<script type="text/javascript" src="./TIFF tags_files/s_code.js"></script>
+
+
+
+
+
+
+
+</body></html>
