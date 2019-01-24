@@ -3,7 +3,7 @@
  */
 import { getDataViewFromBlob } from '../lib/binaryUtils';
 import { loadImageFromFile } from '../lib/imageUtils';
-import { findEXIFParamsInJPG, isValidJPG } from '../lib/jpgUtils';
+import { getEXIFDataFromJPG, isValidJPG } from '../lib/jpgUtils';
 import { ExtendedError } from '../lib/ExtendedError';
 import { ERROR_CODE_NOT_JPG_FILE_BY_BINARY_CHECKING } from '../lib/ErrorCodes';
 
@@ -52,7 +52,8 @@ export class ImagePreview {
                 }
 
 
-                findEXIFParamsInJPG(fileDataView);
+                const result = getEXIFDataFromJPG(fileDataView);
+                console.log(result);
 
             })
             .catch(extendedError => {

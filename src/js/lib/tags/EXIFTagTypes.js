@@ -22,5 +22,5 @@ export const EXIF_TAG_TYPE_UNDEFINED = 7;
 export const EXIF_TAG_TYPE_SLONG = 9;
 
 // Two SLONGs. The first SLONG is the numerator and the second SLONG is the denominator.
-export const EXIF_TAG_TYPE_SRATIONAL = 11;
+export const EXIF_TAG_TYPE_SRATIONAL = 10;
 

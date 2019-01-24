@@ -1,9 +1,10 @@
-/**
- * @param {Blob} blob
- * @return {Promise<ArrayBuffer>}
- */
 import { ExtendedError } from './ExtendedError';
 import { ERROR_CODE_CAN_NOT_READ_BLOB_BY_FILE_READER } from './ErrorCodes';
+
+
+// some information about endianness https://en.wikipedia.org/wiki/Endianness#Examples
+export const LITTLE_ENDIAN_KEY = {};
+export const BIG_ENDIAN_KEY = {};
 
 
 /**
