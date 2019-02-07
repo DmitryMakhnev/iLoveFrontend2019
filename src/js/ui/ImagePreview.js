@@ -53,7 +53,19 @@ export class ImagePreview {
 
 
                 const result = getEXIFDataFromJPG(fileDataView);
-                console.log(result);
+
+                const thumbnail = result.thumbnail;
+                if (thumbnail) {
+                    getDataViewFromBlob(thumbnail)
+                        .then(fileDataView => {
+                            console.log(getEXIFDataFromJPG(fileDataView));
+                        })
+                        .catch(e => {
+                            console.log(e);
+                            console.log(e.extra, e.extra.toString(16));
+                        });
+                    this._showThumbnail(thumbnail);
+                }
 
             })
             .catch(extendedError => {
@@ -75,6 +87,17 @@ export class ImagePreview {
 
         const img = /** @type {HTMLImageElement} */ document.createElement('img');
         img.src = URL.createObjectURL(file);
+
+        this._output.appendChild(img);
+    }
+
+    /**
+     * @param {!Blob} blob
+     * @private
+     */
+    _showThumbnail(blob) {
+        const img = /** @type {HTMLImageElement} */ document.createElement('img');
+        img.src = URL.createObjectURL(blob);
 
         this._output.appendChild(img);
     }

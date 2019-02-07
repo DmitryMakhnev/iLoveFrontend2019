@@ -5,6 +5,9 @@ import {
 } from './ErrorCodes';
 import {
     EXIF_TAGS_DICTIONARY,
+    TIFF_TAG_Compression,
+    TIFF_TAG_JPEGInterchangeFormat,
+    TIFF_TAG_JPEGInterchangeFormatLength,
 } from './tags/EXIFTags';
 import {
     readEXIF,
@@ -38,8 +41,8 @@ export function isValidJPG(someDataView) {
 /**
  * @throws
  * @description walk by JPG bytes for detecting segments (see http://formats.kaitai.io/jpeg/jpeg.svg)
- * @param {DataView} jpgDataView — data view of jpg
- * @param {function(number, number):?ILoopCommand} handler
+ * @param {!DataView} jpgDataView — data view of jpg
+ * @param {!function(!number, !number):?ILoopCommand} handler
  */
 export function findJPGSegmentStarts(jpgDataView, handler) {
     const jpgDataViewLength = jpgDataView.byteLength;
@@ -75,8 +78,8 @@ export function findJPGSegmentStarts(jpgDataView, handler) {
 /**
  * @throws
  * @description (see http://formats.kaitai.io/jpeg/index.html)
- * @param {DataView} jpgDataView
- * @param {number} exifDataStartByteIndex
+ * @param {!DataView} jpgDataView
+ * @param {!number} exifDataStartByteIndex
  */
 export function validateJPGEXIFStart(jpgDataView, exifDataStartByteIndex) {
     const extractedMarker = getStringFromDataView(
@@ -97,11 +100,11 @@ export function validateJPGEXIFStart(jpgDataView, exifDataStartByteIndex) {
 
 /**
  * @throws
- * @param {DataView} jpgDataView
- * @param {PureExifTagReaderHandler} tagReader
+ * @param {!DataView} jpgDataView
+ * @param {!IEXIFTagReaders} tagReaders
  * @return {?IBaseEXIFReadingData}
  */
-export function readEXIFDataFormJPGDataView(jpgDataView, tagReader) {
+export function readEXIFDataFormJPGDataView(jpgDataView, tagReaders) {
     let exifSegmentStartByteIndex;
     findJPGSegmentStarts(
         jpgDataView,
@@ -119,28 +122,84 @@ export function readEXIFDataFormJPGDataView(jpgDataView, tagReader) {
 
         validateJPGEXIFStart(jpgDataView, exifDataStartByteIndex);
 
-        return readEXIF(jpgDataView, exifDataStartByteIndex, tagReader);
+        return readEXIF(jpgDataView, exifDataStartByteIndex, tagReaders);
     }
 }
 
 
+/**
+ * @param {!IBaseEXIFReadingData} baseEXIFReadingData
+ * @param {Object} thumbnailData
+ * @return {?Blob}
+ */
+export function tryToBuildJPEGThumbnail(baseEXIFReadingData, thumbnailData) {
+    const JPEG_COMPRESSION_VALUE = 6;
+
+    const jpegInterchangeFormat = thumbnailData[TIFF_TAG_JPEGInterchangeFormat];
+    const jpegInterchangeFormatLength = thumbnailData[TIFF_TAG_JPEGInterchangeFormatLength];
+
+    if ((thumbnailData[TIFF_TAG_Compression] === JPEG_COMPRESSION_VALUE)
+        && jpegInterchangeFormat
+        && jpegInterchangeFormatLength
+    ) {
+        const thumbnailJPEGStartByteIndex = baseEXIFReadingData.tiffHeaderStartByteIndex + jpegInterchangeFormat;
+        const thumbnailJPEGSAsUint8Array = new Uint8Array(
+            baseEXIFReadingData.imageDataView.buffer,
+            thumbnailJPEGStartByteIndex,
+            jpegInterchangeFormatLength
+        );
+        return new Blob(
+            [thumbnailJPEGSAsUint8Array],
+            {
+                type: 'image/jpeg',
+            }
+        );
+    }
+}
+
+/**
+ * @typedef {Object} IEXIFDataFromJPGResult
+ * @property {Object<string, *>} [tags]
+ * @property {Blob} [thumbnail]
+ */
 
 /**
  * @throws
  * @description simple exif params provider
- * @param {DataView} jpgDataView — data view of jpg
- * @return {Object}
+ * @param {!DataView} jpgDataView — data view of jpg
+ * @return {!IEXIFDataFromJPGResult}
  */
 export function getEXIFDataFromJPG(jpgDataView) {
     const exifTags = {};
-    readEXIFDataFormJPGDataView(
-        jpgDataView,
-        (tagId, tagByteIndex, baseEXIFReadingData, tagLevel) => {
+    const thumbnailData = {};
+
+    /**
+     * @type {IEXIFTagReaders}
+     */
+    const tagReaders = {
+        common: (tagId, tagByteIndex, baseEXIFReadingData, tagLevel) => {
             exifTags[EXIF_TAGS_DICTIONARY[tagLevel][tagId]] = readEXIFTagValue(baseEXIFReadingData, tagByteIndex);
-        }
+        },
+        thumbnail: (tagId, tagByteIndex, baseEXIFReadingData) => {
+            thumbnailData[tagId] = readEXIFTagValue(baseEXIFReadingData, tagByteIndex);
+        },
+    };
+
+    const baseEXIFReadingData = readEXIFDataFormJPGDataView(
+        jpgDataView,
+        tagReaders
     );
+
+
+    // resolve thumbnail
+    let thumbnail = null;
+    if (baseEXIFReadingData) {
+        thumbnail = tryToBuildJPEGThumbnail(baseEXIFReadingData, thumbnailData);
+    }
+
     return {
         tags: exifTags,
+        thumbnail: thumbnail,
     };
 }
 

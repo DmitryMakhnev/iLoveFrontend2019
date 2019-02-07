@@ -10,13 +10,14 @@ import {
     ERROR_CODE_NOT_VALID_JPG_EXIF_ENDIAN_VALUE,
 } from './ErrorCodes';
 import {
-    EXIF_PRIVATE_TAG_InteroperabilityIFDPointer,
     EXIF_TAGS_EXIF_PRIVATE_LEVEL,
     EXIF_TAGS_GPS_INFO_LEVEL,
     EXIF_TAGS_INTEROPERABILITY_LEVEL,
+    EXIF_TAGS_THUMBNAIL_LEVEL,
     EXIF_TAGS_TIFF_LEVEL,
     TIFF_TAG_ExifIFDPointer,
-    TIFF_TAG_GPSInfoIFDPointer
+    TIFF_TAG_GPSInfoIFDPointer,
+    EXIF_PRIVATE_TAG_InteroperabilityIFDPointer,
 } from './tags/EXIFTags';
 import {
     EXIF_TAG_TYPE_ASCII,
@@ -26,7 +27,7 @@ import {
     EXIF_TAG_TYPE_SHORT,
     EXIF_TAG_TYPE_SLONG,
     EXIF_TAG_TYPE_SRATIONAL,
-    EXIF_TAG_TYPE_UNDEFINED
+    EXIF_TAG_TYPE_UNDEFINED,
 } from './tags/EXIFTagTypes';
 import {
     STOP_LOOP_COMMAND
@@ -89,9 +90,9 @@ export function detectEXIFEndianness(imageDataView, exifDataStartByteIndex) {
  * see https://www.media.mit.edu/pia/Research/deepview/exif.html#TiffHeader
  * and http://formats.kaitai.io/exif_le/exif_le.svg also
  *
- * @param {DataView} imageDataView
- * @param {number} exifDataStartByteIndex
- * @param {boolean} isLittleEndian
+ * @param {!DataView} imageDataView
+ * @param {!number} exifDataStartByteIndex
+ * @param {!boolean} isLittleEndian
  */
 export function validateEXIFTIFFHeader(imageDataView, exifDataStartByteIndex, isLittleEndian) {
 
@@ -120,10 +121,10 @@ export function validateEXIFTIFFHeader(imageDataView, exifDataStartByteIndex, is
 }
 
 /**
- * @param {DataView} imageDataView
- * @param {number} exifDataStartByteIndex
- * @param {boolean} isLittleEndian
- * @return {number}
+ * @param {!DataView} imageDataView
+ * @param {!number} exifDataStartByteIndex
+ * @param {!boolean} isLittleEndian
+ * @return {!number}
  */
 export function getEXIFTIFFFirstIFDOffset(imageDataView, exifDataStartByteIndex, isLittleEndian) {
     const tiffHeaderStartIndex = exifDataStartByteIndex + EXIF_MARKER_AND_BASE_EXIF_BYTES_SIZE;
@@ -379,8 +380,8 @@ export function readEXIFImageFileDirectoryTags(baseEXIFReadingData, imageFileDir
  * see more https://www.media.mit.edu/pia/Research/deepview/exif.html#IFD
  * and check for info about next exif levels http://www.cipa.jp/std/documents/e/DC-008-2012_E.pdf (if link is broken, google by 'EXIF 2.3')
  *
- * @param {IBaseEXIFReadingData} baseEXIFReadingData
- * @param {PureExifTagReaderHandler} tagReader
+ * @param {!IBaseEXIFReadingData} baseEXIFReadingData
+ * @param {!PureExifTagReaderHandler} tagReader
  */
 export function readEXIFTags(baseEXIFReadingData, tagReader) {
     const imageDataView = baseEXIFReadingData.imageDataView;
@@ -455,13 +456,58 @@ export function readEXIFTags(baseEXIFReadingData, tagReader) {
 
 
 /**
- * @throws
- * @param {DataView} jpgDataView
- * @param {number} exifDataStartByteIndex
- * @param {PureExifTagReaderHandler} tagReader
- * @return {IBaseEXIFReadingData}
+ * @param {DataView} imageDataView
+ * @param {number} imageFileDirectoryStartByteIndex
+ * @param {boolean} isLittleEndian
+ * @return {number}
  */
-export function readEXIF(jpgDataView, exifDataStartByteIndex, tagReader) {
+export function getNextIFDOffset(imageDataView, imageFileDirectoryStartByteIndex, isLittleEndian) {
+    const entriesCount = imageDataView.getUint16(imageFileDirectoryStartByteIndex, isLittleEndian);
+    return imageDataView.getUint32(imageFileDirectoryStartByteIndex + 2 + entriesCount * 12, isLittleEndian);
+}
+
+
+/**
+ * @param {!IBaseEXIFReadingData} baseEXIFReadingData
+ * @param {!PureExifTagReaderHandler} tagReader
+ */
+export function readEXIFThumbnail(baseEXIFReadingData, tagReader) {
+    const imageDataView = baseEXIFReadingData.imageDataView;
+    const tiffHeaderStartByteIndex = baseEXIFReadingData.tiffHeaderStartByteIndex;
+    const isLittleEndian = baseEXIFReadingData.isLittleEndian;
+    const tiffFirstIFDOffset = getEXIFTIFFFirstIFDOffset(imageDataView, baseEXIFReadingData.exifDataStartByteIndex, isLittleEndian);
+
+    const imageFileDirectoryStartByteIndex = tiffHeaderStartByteIndex + tiffFirstIFDOffset;
+
+    const ifd1OffsetPointer = getNextIFDOffset(imageDataView, imageFileDirectoryStartByteIndex, isLittleEndian);
+
+    if (ifd1OffsetPointer && (ifd1OffsetPointer < imageDataView.byteLength)) {
+        const ifd1StartByteIndex = tiffHeaderStartByteIndex + ifd1OffsetPointer;
+
+        readEXIFImageFileDirectoryTags(
+            baseEXIFReadingData,
+            ifd1StartByteIndex,
+            (tagId, tagByteIndex) => {
+                tagReader(tagId, tagByteIndex, baseEXIFReadingData, EXIF_TAGS_THUMBNAIL_LEVEL, ifd1StartByteIndex);
+            }
+        )
+    }
+}
+
+/**
+ * @typedef {Object} IEXIFTagReaders
+ * @property {PureExifTagReaderHandler} [common]
+ * @property {PureExifTagReaderHandler} [thumbnail]
+ */
+
+/**
+ * @throws
+ * @param {!DataView} jpgDataView
+ * @param {!number} exifDataStartByteIndex
+ * @param {!IEXIFTagReaders} tagReaders
+ * @return {!IBaseEXIFReadingData}
+ */
+export function readEXIF(jpgDataView, exifDataStartByteIndex, tagReaders) {
     const currentEXIFEndian = detectEXIFEndianness(jpgDataView, exifDataStartByteIndex);
     const isLittleEndian = currentEXIFEndian === LITTLE_ENDIAN_KEY;
 
@@ -477,10 +523,21 @@ export function readEXIF(jpgDataView, exifDataStartByteIndex, tagReader) {
         tiffHeaderStartByteIndex: tiffHeaderStartByteIndex,
     };
 
-    readEXIFTags(
-        baseEXIFReadingData,
-        tagReader
-    );
+    const commonTagsReader = tagReaders.common;
+    if (commonTagsReader) {
+        readEXIFTags(
+            baseEXIFReadingData,
+            commonTagsReader
+        );
+    }
+
+    const thumbnailTagsReader = tagReaders.thumbnail;
+    if (thumbnailTagsReader) {
+        readEXIFThumbnail(
+            baseEXIFReadingData,
+            thumbnailTagsReader
+        );
+    }
 
     return baseEXIFReadingData;
 }
