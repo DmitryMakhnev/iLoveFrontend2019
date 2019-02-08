@@ -1,11 +1,11 @@
 /**
  * @implements EventListener
  */
-import { getDataViewFromBlob } from '../lib/binaryUtils';
-import { loadImageFromFile } from '../lib/imageUtils';
-import { getEXIFDataFromJPG, isValidJPG } from '../lib/jpgUtils';
-import { ExtendedError } from '../lib/ExtendedError';
-import { ERROR_CODE_NOT_JPG_FILE_BY_BINARY_CHECKING } from '../lib/ErrorCodes';
+import { getDataViewFromBlob } from '../libs/exif/binaryUtils';
+import { loadImageFromFile } from '../libs/exif/imageUtils';
+import { getEXIFDataFromJPG, isValidJPG } from '../libs/exif/jpgUtils';
+import { ExtendedError } from '../libs/exif/ExtendedError';
+import { ERROR_CODE_NOT_JPG_FILE_BY_BINARY_CHECKING } from '../libs/exif/ErrorCodes';
 
 
 export class ImagePreview {

@@ -3,7 +3,7 @@ import classnames from 'classnames';
 
 
 import styles from './examplesMenu.scss';
-import { AppView } from '../app/appViewModel';
+import { AppView } from '../../app/appViewModel';
 
 
 /**
