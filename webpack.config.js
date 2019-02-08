@@ -140,6 +140,8 @@ module.exports = {
                         {
                             loader: 'css-loader',
                             options: {
+                                modules: true,
+                                localIdentName: DEV_MODE ? '[name]-[local]-[hash:base64:5]' : '[hash:base64:5]',
                                 sourceMap: DEV_MODE,
                             },
                         },
@@ -174,7 +176,38 @@ module.exports = {
                 use: {
                     loader: 'babel-loader',
                     options: {
-                        presets: ['@babel/preset-env']
+                        presets: [
+                            '@babel/preset-react',
+                            '@babel/preset-env'
+                        ],
+                        plugins: [
+                            'jsx-control-statements',
+                            // stage-2
+                            [
+                                '@babel/plugin-proposal-decorators',
+                                {
+                                    legacy: true,
+                                },
+                            ],
+                            // stage-3
+                            [
+                                '@babel/plugin-proposal-class-properties',
+                                {
+                                    loose: true,
+                                },
+                            ],
+                            // ES2018
+                            [
+                                '@babel/plugin-proposal-object-rest-spread',
+                                {
+                                    loose: true,
+                                    useBuiltIns: true,
+                                },
+                            ],
+                        ],
+                        cacheDirectory: DEV_MODE,
+                        babelrc: false,
+                        configFile: false,
                     }
                 }
             },
