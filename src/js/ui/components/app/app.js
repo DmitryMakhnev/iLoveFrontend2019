@@ -5,6 +5,7 @@ import { AppView, AppViewModel } from './appViewModel';
 
 import styles from './app.scss';
 import { ExamplesMenu } from '../examples/menu/examplesMenu';
+import { SetAvatarExample } from '../examples/setAvatar/setAvatarExample';
 import { JustImageExample } from '../examples/justImage/justImageExample';
 import { WithOrientationExample } from '../examples/withOrientation/withOrientationExample';
 
@@ -18,6 +19,9 @@ export const App = observer(() => {
                       onViewSelect={ appViewModel.showView } />
         <div className={ styles.content }>
             <Choose>
+                <When condition={ activeAppView === AppView.SET_AVATAR }>
+                    <SetAvatarExample />
+                </When>
                 <When condition={ activeAppView === AppView.JUST_IMAGE }>
                     <JustImageExample />
                 </When>

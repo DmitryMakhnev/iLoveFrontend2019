@@ -6,6 +6,7 @@ import { action, observable } from 'mobx';
  * @enum
  */
 export const AppView = {
+    SET_AVATAR: 'SET_AVATAR',
     JUST_IMAGE: 'JUST_IMAGE',
     WITH_ORIENTATION: 'WITH_ORIENTATION',
 };
@@ -15,7 +16,7 @@ export const AppView = {
 export class AppViewModel {
 
     @observable
-    activeAppView = AppView.WITH_ORIENTATION;
+    activeAppView = AppView.SET_AVATAR;
 
     /**
      * @param {!AppView} appView

@@ -17,6 +17,8 @@ if (!deviceData.isMobile) {
     document.body.classList.add('hover');
 }
 
-const appNode = document.querySelector('.app');
-ReactDOM.render(<App />, appNode);
+window.addEventListener('load', () => {
+    const appNode = document.querySelector('.app');
+    ReactDOM.render(<App />, appNode);
+});
 
