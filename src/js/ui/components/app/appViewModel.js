@@ -15,7 +15,7 @@ export const AppView = {
 export class AppViewModel {
 
     @observable
-    activeAppView = AppView.JUST_IMAGE;
+    activeAppView = AppView.WITH_ORIENTATION;
 
     /**
      * @param {!AppView} appView

@@ -6,6 +6,7 @@ import { AppView, AppViewModel } from './appViewModel';
 import styles from './app.scss';
 import { ExamplesMenu } from '../examples/menu/examplesMenu';
 import { JustImageExample } from '../examples/justImage/justImageExample';
+import { WithOrientationExample } from '../examples/withOrientation/withOrientationExample';
 
 
 export const App = observer(() => {
@@ -21,7 +22,7 @@ export const App = observer(() => {
                     <JustImageExample />
                 </When>
                 <When condition={ activeAppView === AppView.WITH_ORIENTATION }>
-                    WO
+                    <WithOrientationExample />
                 </When>
                 <Otherwise>
                     You made mistake in demo. Just kill yourself
