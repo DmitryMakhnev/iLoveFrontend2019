@@ -24,12 +24,13 @@ export const withViewModel = viewModelFactory => BaseComponent =>
 
         constructor(props) {
             super(props);
-            this._receivePropsToViewModel(props);
-        }
-
-        shouldComponentUpdate(nextProps, nextState, nextContext) {
-            this._receivePropsToViewModel(nextProps);
-            return true;
+            if (this._viewModel.receiveNewProps) {
+                this.shouldComponentUpdate = function(nextProps) {
+                    this._receivePropsToViewModel(nextProps);
+                    return true;
+                };
+                this._receivePropsToViewModel(props);
+            }
         }
 
         render() {

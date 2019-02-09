@@ -28,10 +28,12 @@ export const ExamplesMenu = ({
                        key={ appView }
                        className={ classnames(
                            styles.item,
-                           activeAppView === appView ? '__active' : ''
+                           {
+                               [styles.__active]: activeAppView === appView,
+                           }
                        ) }
                        onClick={ () => onViewSelect(appView) }>
-                        { appView }
+                        { appView.toString().replace(/_/g, ' ') }
                     </a>
                 )
     }

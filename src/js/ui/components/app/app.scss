@@ -1,6 +1,16 @@
+@import "../../../../styles/mixins/allMixins";
 
 
 .root {
 
     }
+
+    .content {
+        padding: 40px 20px;
+
+        @include ourMobileResolution() {
+            padding: 16px;
+            }
+        }
+
 

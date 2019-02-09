@@ -1,27 +1,24 @@
 import { registerInjection } from 'diii';
-import { action, computed, observable } from 'mobx';
-import { receivable } from '../../../../libs/mobx/withViewModel';
+import { action, observable } from 'mobx';
 
 
 
 @registerInjection
 export class JustImageExampleViewModel {
 
-    @observable
-    counter = 1;
+    @observable.ref
+    imageFile = null;
+
+    @observable.ref
+    imgSrc = null;
 
     @action.bound
-    inc() {
-        this.counter += 1;
-    }
-
-    @observable
-    @receivable.from('from')
-    test = null;
-
-    @computed
-    get result() {
-        return `c: ${this.counter} / t: ${this.test}`;
+    onImageChange(e) {
+        const imageFile = e.target.files[0];
+        if (imageFile) {
+            this.imageFile = imageFile;
+            this.imgSrc = URL.createObjectURL(imageFile);
+        }
     }
 
 }

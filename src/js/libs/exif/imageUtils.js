@@ -1,3 +1,8 @@
+
+
+export const INPUT_FILE_SELECT_IMAGE_ACCEPT = 'image/png,image/gif,image/jpeg';
+
+
 /**
  * @param {string} url
  * @return {Promise<?Image>}

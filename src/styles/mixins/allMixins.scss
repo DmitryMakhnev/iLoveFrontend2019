@@ -1,0 +1,12 @@
+@mixin ourMobileResolution {
+    // 414 is magic phone width from iPhone 8 Plus
+    @media (max-width: 414px), (orientation: landscape) {
+        @content
+        }
+    }
+
+@mixin hover {
+    :global(.hover) &:hover {
+        @content;
+        }
+    }

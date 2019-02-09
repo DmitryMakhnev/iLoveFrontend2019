@@ -1,10 +1,23 @@
+@import "../../../../../styles/vars/allVars";
+@import "../../../../../styles/mixins/allMixins";
 
 
 .root {
-
+    padding: 12px;
+    background: #000;
     }
 
     .item {
-
+        text-transform: lowercase;
+        display: inline-block;
+        margin: 0 8px;
+        font-size: 16px;
         }
+        .item.__active {
+            color: $color_link_active;
+
+            @include hover() {
+                color: $color_link_active-hover;
+                }
+            }
 

@@ -15,18 +15,19 @@ export const App = observer(() => {
     return <div className={ styles.root } onDoubleClick={ appViewModel.inc }>
         <ExamplesMenu activeAppView={ activeAppView }
                       onViewSelect={ appViewModel.showView } />
-        <Choose>
-            <When condition={ activeAppView === AppView.JUST_IMAGE }>
-                JI
-                <JustImageExample from={ appViewModel.test } />
-            </When>
-            <When condition={ activeAppView === AppView.WITH_ORIENTATION }>
-                WO
-            </When>
-            <Otherwise>
-
-            </Otherwise>
-        </Choose>
+        <div className={ styles.content }>
+            <Choose>
+                <When condition={ activeAppView === AppView.JUST_IMAGE }>
+                    <JustImageExample />
+                </When>
+                <When condition={ activeAppView === AppView.WITH_ORIENTATION }>
+                    WO
+                </When>
+                <Otherwise>
+                    You made mistake in demo. Just kill yourself
+                </Otherwise>
+            </Choose>
+        </div>
     </div>;
 });
 
