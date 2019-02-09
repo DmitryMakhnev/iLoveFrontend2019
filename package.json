@@ -5,7 +5,8 @@
   "main": "./src/js/index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "start": "webpack-dev-server --config webpack.config.js"
+    "start": "webpack-dev-server --config webpack.config.js",
+    "build": "cross-env BUILD_ENV=production webpack --config webpack.config.js "
   },
   "repository": {
     "type": "git",
@@ -32,6 +33,7 @@
     "babel-plugin-jsx-control-statements": "^4.0.0",
     "case-sensitive-paths-webpack-plugin": "^2.1.2",
     "clean-webpack-plugin": "^1.0.0",
+    "cross-env": "^5.2.0",
     "css-loader": "^2.0.0",
     "extract-text-webpack-plugin": "^4.0.0-beta.0",
     "file-loader": "^2.0.0",

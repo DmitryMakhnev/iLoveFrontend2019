@@ -46,7 +46,7 @@ module.exports = {
     output: {
         path: outputPath,
         filename: `js/[name]_[hash].js`,
-        publicPath: '/',
+        publicPath: BUILD_ENV === Env.PRODUCTION ? '/ilf2019/' : '/',
     },
 
     mode: BUILD_ENV,
